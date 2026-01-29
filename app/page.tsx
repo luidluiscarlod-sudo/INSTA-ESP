@@ -7,7 +7,7 @@ import { Camera, Flame, Facebook, CheckCircle, MessageCircle, Heart, Upload, Sca
 import { fetchInstagramProfile, fetchInstagramPosts } from "@/lib/instagram-tracker"
 import { AlertTriangle } from "lucide-react"
 
-// Sistema de limite de dispositivo - 1 busqueda por dispositivo
+// Device limit system - 1 search per device
 const LIMIT_KEY = "instacheck_search_limit"
 const MAX_SEARCHES = 1
 
@@ -131,7 +131,7 @@ function SpySystemContent() {
   const [investigatedPhone, setInvestigatedPhone] = useState<string>("")
   const [analysisProgress, setAnalysisProgress] = useState(0)
   const [isAnalyzing, setIsAnalyzing] = useState(false)
-  const [analysisMessage, setAnalysisMessage] = useState("Inicializando escaneo...")
+  const [analysisMessage, setAnalysisMessage] = useState("Initializing scan...")
   const [animationFrame, setAnimationFrame] = useState(0) // New state for animation frame
   const [timeLeft, setTimeLeft] = useState(10 * 60) // 10 minutes in seconds for the countdown
   const [showMissedMatch, setShowMissedMatch] = useState(false)
@@ -161,32 +161,32 @@ function SpySystemContent() {
 
   const debounceTimer = useRef<NodeJS.Timeout | null>(null)
 
-  // Datos para notificaciones aleatorias
+  // Data for random notifications
   const randomUsers = [
-    "Ana Garcia",
-    "Juan Perez",
-    "Maria Lopez",
-    "Pedro Rodriguez",
-    "Camila Martinez",
-    "Lucas Sanchez",
-    "Mariana Fernandez",
-    "Rafael Torres",
-    "Carlos Diaz",
-    "Beatriz Moreno",
-    "Gustavo Ruiz",
-    "Isabella Jimenez",
-    "Felipe Gonzalez",
-    "Laura Hernandez",
-    "Daniel Castro",
-    "Sofia Mendez",
+    "Ana Silva",
+    "João Pereira",
+    "Maria Oliveira",
+    "Pedro Santos",
+    "Camila Souza",
+    "Lucas Costa",
+    "Mariana Almeida",
+    "Rafael Martins",
+    "Rafael Martins",
+    "Beatriz Lima",
+    "Gustavo Rocha",
+    "Isabela Fernandes",
+    "Felipe Gomes",
+    "Lara Ribeiro",
+    "Daniel Carvalho",
+    "Sofia Mendes",
   ]
   const notificationActions = [
-    "accedio al resultado final.",
-    "descargo el informe completo.",
-    "visualizo datos privados.",
-    "inicio un nuevo escaneo.",
-    "compartio los hallazgos.",
-    "verifico la inteligencia.",
+    "accessed the final result.",
+    "downloaded the full report.",
+    "viewed private data.",
+    "initiated a new scan.",
+    "shared the findings.",
+    "verified the intelligence.",
   ]
 
   // Add these arrays for placeholder images
@@ -447,26 +447,26 @@ function SpySystemContent() {
   const startAnalysis = useCallback(() => {
     setIsAnalyzing(true)
     setAnalysisProgress(0)
-    setAnalysisMessage("Inicializando protocolos de reconocimiento facial...")
-    setAnimationFrame(0) // Reiniciar frame de animacion
+    setAnalysisMessage("Initializing facial recognition protocols...")
+    setAnimationFrame(0) // Reset animation frame
 
     let progress = 0
-    let frame = 0 // Contador local de frames
+    let frame = 0 // Local frame counter
     const intervalDuration = 150
     const totalDuration = 15000
     const increment = 100 / (totalDuration / intervalDuration)
 
     const messages = [
-      "Analizando biometria facial e identificadores unicos...",
-      "Cruzando referencias con bases de datos publicas y privadas encriptadas...",
-      "Estableciendo conexion segura con APIs de redes sociales...",
-      "Descifrando perfiles ocultos y cuentas secretas...",
-      "Extrayendo registros de mensajes privados y archivos multimedia...",
-      "Numero de telefono encontrado! Cruzando con perfiles sociales...",
-      "Identificando patrones de interaccion anomalos y likes sospechosos...",
-      "Compilando informe de inteligencia completo...",
-      "Finalizando verificacion de integridad y extraccion de datos...",
-      "Analisis completo. Resultados listos para descifrar.",
+      "Analyzing facial biometrics and unique identifiers...",
+      "Cross-referencing encrypted public and private databases...",
+      "Establishing secure connection to social network APIs...",
+      "Decrypting hidden profiles and shadow accounts...",
+      "Extracting private message logs and media attachments...",
+      "Phone number found! Cross-referencing with social profiles...",
+      "Identifying anomalous interaction patterns and suspicious likes...",
+      "Compiling comprehensive intelligence report...",
+      "Finalizing data integrity verification and extraction...",
+      "Analysis complete. Results ready for decryption.",
     ]
     let messageIndex = 0
 
@@ -573,32 +573,32 @@ const fetchWhatsAppPhoto = async (phoneNumber: string, countryCode: string) => {
       setUserCity(detectedCity)
       setUserCountry(detectedCountry)
     } catch (error) {
-      console.error("Error al obtener ubicacion:", error)
-      setUserCity("Madrid")
-      setUserCountry("Espana")
+      console.error("Erro ao obter localização:", error)
+      setUserCity("Fortaleza")
+      setUserCountry("Brasil")
     } finally {
       setIsLoadingLocation(false)
     }
   }
 
-  // Componente de advertencia para todas las etapas
+  // Warning component for all stages
   const LimitWarningBanner = () => (
     <div className="w-full max-w-md mx-auto mb-4 px-4 py-2 bg-yellow-500/20 border border-yellow-500/50 rounded-lg">
       <p className="text-center text-xs text-yellow-400">
         <AlertTriangle className="inline-block mr-1 mb-0.5" size={12} />
-        <span className="font-semibold">Atencion:</span> Solo tienes <span className="font-bold text-white">1 BUSQUEDA GRATIS</span> por dispositivo
+        <span className="font-semibold">Attention:</span> You only have <span className="font-bold text-white">1 FREE search</span> per device
       </p>
     </div>
   )
 
   const renderStage = () => {
-    // Determinar la imagen de match basada en el genero
+    // Determine the match image based on gender
     const matchImageSrc =
-      investigatedGender === "Femenino"
+      investigatedGender === "Feminino"
         ? "/images/tinder-match-female.jpeg"
         : investigatedGender === "Masculino"
-          ? "/images/tinder-match-male.png" // Nueva imagen para el match masculino
-          : "/placeholder.svg?height=300&width=200" // Placeholder para 'Otro' o no seleccionado
+          ? "/images/tinder-match-male.png" // Nova imagem para o match masculino
+          : "/placeholder.svg?height=300&width=200" // Placeholder para 'Outro' ou não selecionado
 
     switch (currentStage) {
       case 0:
@@ -607,13 +607,13 @@ const fetchWhatsAppPhoto = async (phoneNumber: string, countryCode: string) => {
             <LimitWarningBanner />
             <p className="text-4xl md:text-5xl font-bold text-white tracking-wider animate-pulse">INSTA CHECK 3</p>
             <h1 className="text-2xl md:text-3xl font-bold text-white tracking-wider animate-pulse">
-              💔 TE SIENTES TRAICIONADO/A?
+              💔 FEELING BETRAYED?
             </h1>
             <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-              "Mereces saber la verdad. Incluso las conversaciones que intento ocultar..."
+              “You deserve to know the truth. Even the conversations he tried to hide…”
             </p>
             <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-              Descubre perfiles ocultos, mensajes privados y likes sospechosos en:
+              Discover hidden profiles, private messages, and suspicious likes on:
             </p>
             <div className="flex flex-wrap justify-center gap-6 text-3xl">
               <div className="flex flex-col items-center gap-2">
@@ -634,33 +634,33 @@ const fetchWhatsAppPhoto = async (phoneNumber: string, countryCode: string) => {
               </div>
               <div className="flex flex-col items-center gap-2">
                 <MapPin className="text-orange-500" size={56} />
-                <span className="text-white text-base">Ubicacion</span>
+                <span className="text-white text-base">Location</span>
               </div>
             </div>
             <Button
               onClick={nextStage}
               className="mt-10 px-10 py-5 text-xl font-bold uppercase bg-gradient-to-r from-pink-500 to-red-600 text-white shadow-lg hover:from-pink-600 hover:to-red-700 transition-all duration-300 transform hover:scale-105 animate-pulse-slow"
             >
-              ➡️ INICIAR ESCANEO
+              ➡️ START SCANNING
             </Button>
           </div>
         )
-      case 1: // Edad, Genero, Ubicacion y Telefono
+      case 1: // Age, Gender, Location, and Phone
         return (
           <div className="text-center space-y-6 px-4">
             <LimitWarningBanner />
             <h2 className="text-2xl md:text-4xl font-bold text-white animate-fade-in">
-              📊 PERFIL DEL <span className="text-pink-400">OBJETIVO</span>
+              📊 <span className="text-pink-400">TARGET</span> PROFILE
             </h2>
             <p className="text-lg md:text-xl text-gray-300 animate-fade-in-delay-1">
-              Completa el perfil de investigacion para un analisis mejorado
+              Complete the investigation profile for enhanced analysis
             </p>
             <div className="w-full max-w-sm mx-auto space-y-4">
               <div className="relative">
                 <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
                 <input
                   type="number"
-                  placeholder="Edad de la persona investigada"
+                  placeholder="Age of the investigated person"
                   value={investigatedAge}
                   onChange={(e) => setInvestigatedAge(e.target.value)}
                   className="w-full p-3 pl-10 bg-gray-800/50 border border-gray-700 rounded-lg text-white text-base focus:outline-none focus:ring-2 focus:ring-pink-500"
@@ -679,10 +679,10 @@ const fetchWhatsAppPhoto = async (phoneNumber: string, countryCode: string) => {
                     try {
                       const tipo =
                         selectedGender === "Masculino"
-                          ? "pareja-hombre"
-                          : selectedGender === "Femenino"
-                            ? "pareja-mujer"
-                            : "otro"
+                          ? "parceiro"
+                          : selectedGender === "Feminino"
+                            ? "parceira"
+                            : "outro"
                       localStorage.setItem("alvoMonitoramento", `instagram-${tipo}`)
                       console.log("[v0] Saved to localStorage:", `instagram-${tipo}`)
                     } catch (e) {
@@ -692,11 +692,11 @@ const fetchWhatsAppPhoto = async (phoneNumber: string, countryCode: string) => {
                   className="w-full p-3 pl-10 bg-gray-800/50 border border-gray-700 rounded-lg text-white text-base appearance-none focus:outline-none focus:ring-2 focus:ring-pink-500"
                 >
                   <option value="" disabled>
-                    Seleccionar Genero
+                    Select Gender
                   </option>
-                  <option value="Masculino">Masculino</option>
-                  <option value="Femenino">Femenino</option>
-                  <option value="Otro">Otro</option>
+                  <option value="Masculino">Male</option>
+                  <option value="Feminino">Female</option>
+                  <option value="Outro">Other</option>
                 </select>
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
                   <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -708,7 +708,7 @@ const fetchWhatsAppPhoto = async (phoneNumber: string, countryCode: string) => {
                 <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
                 <input
                   type="text"
-                  placeholder="Ubicacion (ej., Madrid, Espana)"
+                  placeholder="Location (e.g., New York, USA)"
                   value={investigatedLocation}
                   onChange={(e) => setInvestigatedLocation(e.target.value)}
                   className="w-full p-3 pl-10 bg-gray-800/50 border border-gray-700 rounded-lg text-white text-base focus:outline-none focus:ring-2 focus:ring-pink-500"
@@ -718,7 +718,7 @@ const fetchWhatsAppPhoto = async (phoneNumber: string, countryCode: string) => {
                 <Phone className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
                 <div className="flex">
                   <select
-                    value={investigatedPhone.split(" ")[0] || "+34"}
+                    value={investigatedPhone.split(" ")[0] || "+1"}
                     onChange={(e) => {
                       const countryCode = e.target.value
                       const phoneNumber = investigatedPhone.split(" ")[1] || ""
@@ -732,7 +732,7 @@ const fetchWhatsAppPhoto = async (phoneNumber: string, countryCode: string) => {
                       if (phoneNumber && phoneNumber.length >= 8) {
                         const timer = setTimeout(() => {
                           fetchWhatsAppPhoto(phoneNumber, countryCode.replace("+", ""))
-                        }, 1000) // Esperar 1 segundo despues de que el usuario deje de escribir
+                        }, 1000) // Wait 1 second after user stops typing
                         debounceTimer.current = timer
                       }
                     }}
@@ -946,10 +946,10 @@ const fetchWhatsAppPhoto = async (phoneNumber: string, countryCode: string) => {
                   </select>
                   <input
                     type="tel"
-                    placeholder="Numero de telefono"
+                    placeholder="Phone number"
                     value={investigatedPhone.split(" ")[1] || ""}
                     onChange={(e) => {
-                      const countryCode = investigatedPhone.split(" ")[0] || "+34"
+                      const countryCode = investigatedPhone.split(" ")[0] || "+1"
                       const fullPhone = `${countryCode} ${e.target.value}`
                       setInvestigatedPhone(fullPhone)
 
@@ -960,7 +960,7 @@ const fetchWhatsAppPhoto = async (phoneNumber: string, countryCode: string) => {
                       if (e.target.value.length >= 8) {
                         const timer = setTimeout(() => {
                           fetchWhatsAppPhoto(e.target.value, countryCode.replace("+", ""))
-                        }, 1000) // Esperar 1 segundo despues de que el usuario deje de escribir
+                        }, 1000) // Wait 1 second after user stops typing
                         debounceTimer.current = timer
                       }
                     }}
@@ -978,7 +978,7 @@ const fetchWhatsAppPhoto = async (phoneNumber: string, countryCode: string) => {
                       ) : whatsappPhoto ? (
                         <img
                           src={whatsappPhoto || "/placeholder.svg"}
-                          alt="Perfil de WhatsApp"
+                          alt="WhatsApp Profile"
                           className="w-full h-full object-cover"
                           onError={(e) => {
                             ;(e.target as HTMLImageElement).src = "/whatsapp-checkmark.jpeg"
@@ -987,17 +987,17 @@ const fetchWhatsAppPhoto = async (phoneNumber: string, countryCode: string) => {
                       ) : (
                         <img
                           src="/whatsapp-checkmark.jpeg"
-                          alt="WhatsApp Verificado"
+                          alt="WhatsApp Checkmark"
                           className="w-full h-full object-cover"
                         />
                       )}
                     </div>
                     <div className="flex-1">
                       <p className="text-sm text-green-400 font-medium">
-                        {isLoadingPhoto ? "Buscando en WhatsApp..." : "Perfil de WhatsApp Encontrado"}
+                        {isLoadingPhoto ? "Searching WhatsApp..." : "WhatsApp Profile Found"}
                       </p>
                       <p className="text-xs text-gray-400">
-                        {isLoadingPhoto ? "Analizando numero de telefono..." : "Perfil detectado"}
+                        {isLoadingPhoto ? "Analyzing phone number..." : "Profile detected"}
                       </p>
                     </div>
                   </div>
@@ -1013,10 +1013,10 @@ const fetchWhatsAppPhoto = async (phoneNumber: string, countryCode: string) => {
                       </div>
                       <div className="flex-1">
                         <p className="text-sm text-green-400 font-medium">
-                          {isLoadingLocation ? "Detectando ubicacion..." : "Ubicacion Sospechosa Encontrada"}
+                          {isLoadingLocation ? "Detecting location..." : "Suspicious Location Found"}
                         </p>
                         <p className="text-xs text-gray-400">
-                          {isLoadingLocation ? "Analizando direccion IP..." : `${userCity}, ${userCountry}`}
+                          {isLoadingLocation ? "Analyzing IP address..." : `${userCity}, ${userCountry}`}
                         </p>
                       </div>
                     </div>
@@ -1029,16 +1029,16 @@ const fetchWhatsAppPhoto = async (phoneNumber: string, countryCode: string) => {
               disabled={!investigatedAge || !investigatedGender || !investigatedLocation || !investigatedPhone}
               className="mt-8 px-8 py-4 text-lg font-bold uppercase bg-gradient-to-r from-pink-500 to-red-600 text-white shadow-lg hover:from-pink-600 hover:to-red-700 transition-all duration-300 transform hover:scale-105 animate-pulse-slow disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              ➡️ CONTINUAR
+              ➡️ CONTINUE
             </Button>
           </div>
         )
-case 2: // ETAPA ANTERIOR 1: Subir foto y usuario
+case 2: // OLD STAGE 1: Upload and Handle
   return (
   <div className="text-center space-y-8">
   <LimitWarningBanner />
   <p className="text-3xl md:text-4xl font-bold text-white animate-pulse">
-  📸 Selecciona una foto para analisis facial...
+  📸 Select a photo for facial analysis...
             </p>
             <div className="relative w-full max-w-md mx-auto border-2 border-dashed border-gray-600 p-6 rounded-lg text-gray-400 flex flex-col items-center justify-center gap-3 bg-gray-800/30 hover:border-gray-500 transition-colors duration-200 cursor-pointer">
               <input
@@ -1051,31 +1051,31 @@ case 2: // ETAPA ANTERIOR 1: Subir foto y usuario
               {imagePreviewUrl ? (
                 <img
                   src={imagePreviewUrl || "/placeholder.svg"}
-                  alt="Vista previa"
+                  alt="Preview"
                   className="max-h-40 max-w-full object-contain rounded-md"
                 />
               ) : (
                 <Upload size={40} className="text-gray-500" />
               )}
               <p className="text-base">
-                {fileName ? `Archivo seleccionado: ${fileName}` : "Arrastra y suelta o haz clic para seleccionar"}
+                {fileName ? `File selected: ${fileName}` : "Drag and drop or click to select"}
               </p>
               {fileName && !isAnalyzing && (
                 <div className="mt-3 text-green-400 flex items-center gap-2 animate-fade-in">
                   <ScanEye size={20} />
-                  <span className="text-lg">Listo para escanear!</span>
+                  <span className="text-lg">Ready to scan!</span>
                 </div>
               )}
             </div>
 
             <p className="text-2xl md:text-3xl font-bold text-white animate-pulse mt-8">
-              🎯 IDENTIFICACION DEL OBJETIVO: Ingresa el Instagram del objetivo
+              🎯 TARGET IDENTIFICATION: Enter the target Instagram
             </p>
             <div className="relative w-full max-w-md mx-auto">
               <User className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
               <input
                 type="text"
-                placeholder="@usuario_objetivo"
+                placeholder="@target_user"
                 value={investigatedHandle}
                 onChange={(e) => handleInstagramHandleChange(e.target.value)}
                 className="w-full p-3 pl-10 bg-gray-800/50 border border-gray-700 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
@@ -1135,7 +1135,7 @@ case 2: // ETAPA ANTERIOR 1: Subir foto y usuario
                       {typeof instagramProfile.follower_count === "number"
                         ? instagramProfile.follower_count.toLocaleString()
                         : instagramProfile.follower_count || "0"}{" "}
-                      seguidores
+                      followers
                     </p>
                     {instagramProfile.biography && (
                       <p className="text-sm text-gray-300 mt-2">{instagramProfile.biography}</p>
@@ -1147,7 +1147,7 @@ case 2: // ETAPA ANTERIOR 1: Subir foto y usuario
 
             {isAnalyzing && (
               <div className="w-full max-w-md mx-auto mt-8 space-y-3 animate-fade-in relative p-4 bg-gray-800/30 rounded-lg border border-gray-700 overflow-hidden">
-                {/* Cuadricula de fondo para efecto de escaneo */}
+                {/* Background grid for scanning effect */}
                 <div
                   className="absolute inset-0 opacity-10 pointer-events-none"
                   style={{
@@ -1161,7 +1161,7 @@ case 2: // ETAPA ANTERIOR 1: Subir foto y usuario
                 />
                 <div className="relative z-10">
                   <p className="text-xl font-bold text-white font-mono">
-                    <span className="text-green-400">[ESCANEANDO]</span> {analysisMessage} ({analysisProgress}%)
+                    <span className="text-green-400">[SCANNING]</span> {analysisMessage} ({analysisProgress}%)
                   </p>
                   <div className="w-full bg-gray-700 rounded-full h-3 mt-3">
                     <div
@@ -1170,17 +1170,17 @@ case 2: // ETAPA ANTERIOR 1: Subir foto y usuario
                     ></div>
                   </div>
                   <p className="text-lg font-bold text-gray-300 animate-pulse mt-3 font-mono">
-                    <span className="text-yellow-400">[ESTADO]</span> Buscando cuentas conectadas...
+                    <span className="text-yellow-400">[STATUS]</span> Searching for connected accounts...
                   </p>
                   {analysisProgress >= 60 && (
                     <div className="flex items-center gap-3 mt-3 p-2 bg-green-900/30 rounded-lg border border-green-700 animate-fade-in">
                       <img
                         src={whatsappPhoto || "/placeholder.svg"}
-                        alt="Objetivo"
+                        alt="Target"
                         className="w-8 h-8 rounded-full object-cover border-2 border-green-400"
                       />
                       <p className="text-lg font-bold text-green-400 font-medium">
-                        <span className="text-green-300">[TELEFONO ENCONTRADO]</span> {investigatedPhone}
+                        <span className="text-green-300">[PHONE FOUND]</span> {investigatedPhone}
                       </p>
                       <CheckCircle size={20} className="text-green-400" />
                     </div>
@@ -1192,7 +1192,7 @@ case 2: // ETAPA ANTERIOR 1: Subir foto y usuario
                       {[...Array(9)].map((_, i) => {
                         let src = "/placeholder.svg" // Default placeholder
                         const currentPlaceholders =
-                          investigatedGender === "Femenino" ? femalePlaceholders : malePlaceholders
+                          investigatedGender === "Feminino" ? femalePlaceholders : malePlaceholders
 
                         // Determine the source based on analysis progress and square index
                         if (isAnalyzing && analysisProgress < 90) {
@@ -1239,30 +1239,30 @@ case 2: // ETAPA ANTERIOR 1: Subir foto y usuario
 
             <Button
               onClick={startAnalysis}
-              disabled={!fileName || !investigatedHandle || isAnalyzing} // Deshabilitar hasta que el archivo Y el usuario esten presentes
+              disabled={!fileName || !investigatedHandle || isAnalyzing} // Disable until file AND handle are present
               className="mt-10 px-10 py-5 text-xl font-bold uppercase bg-gradient-to-r from-pink-500 to-red-600 text-white shadow-lg hover:from-pink-600 hover:to-red-700 transition-all duration-300 transform hover:scale-105 animate-pulse-slow disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isAnalyzing ? "ANALIZANDO..." : "➡️ CONTINUAR"}
+              {isAnalyzing ? "ANALYZING..." : "➡️ CONTINUE"}
             </Button>
           </div>
         )
-case 3: // ETAPA ANTERIOR 2: Deteccion y Notificaciones
+case 3: // OLD STAGE 2: Detection and Notifications
   return (
   <div className="text-center space-y-8">
   <LimitWarningBanner />
   <div className="grid gap-3 text-left max-w-xl mx-auto">
   <p className="text-lg md:text-xl text-green-400 flex items-center gap-2 animate-fade-in">
-  <CheckCircle className="text-green-400" size={28} /> Cuenta de Instagram encontrada. Ultimo acceso: hace 3h.
+  <CheckCircle className="text-green-400" size={28} /> Instagram account found. Last access: 3h ago.
               </p>
               <p className="text-lg md:text-xl text-red-400 flex items-center gap-2 animate-fade-in-delay-1">
-                <Flame className="text-red-400" size={28} /> Perfil oculto de Tinder detectado.
+                <Flame className="text-red-400" size={28} /> Hidden Tinder profile detected.
               </p>
               <p className="text-lg md:text-xl text-blue-400 flex items-center gap-2 animate-fade-in-delay-2">
                 {imagePreviewUrl ? (
                   <div className="relative w-7 h-7 rounded-full overflow-hidden border-2 border-blue-400 flex items-center justify-center">
                     <img
                       src={imagePreviewUrl || "/placeholder.svg"}
-                      alt="Usuario"
+                      alt="User"
                       className="w-full h-full object-cover"
                     />
                     <MessageCircle
@@ -1273,14 +1273,14 @@ case 3: // ETAPA ANTERIOR 2: Deteccion y Notificaciones
                 ) : (
                   <MessageCircle className="text-blue-400" size={28} />
                 )}
-                Mensajes privados encontrados.
+                Private messages found.
               </p>
               <p className="text-lg md:text-xl text-pink-400 flex items-center gap-2 animate-fade-in-delay-3">
-                <Heart className="text-pink-400" size={28} /> Likes sospechosos identificados en publicaciones antiguas.
+                <Heart className="text-pink-400" size={28} /> Suspicious likes identified on old posts.
               </p>
               {investigatedLocation && (
                 <p className="text-lg md:text-xl text-purple-400 flex items-center gap-2 animate-fade-in-delay-4">
-                  <MapPin className="text-purple-400" size={28} /> Ubicacion detectada: {investigatedLocation}.
+                  <MapPin className="text-purple-400" size={28} /> Location detected: {investigatedLocation}.
                 </p>
               )}
               {analysisProgress >= 60 && (
@@ -1288,13 +1288,13 @@ case 3: // ETAPA ANTERIOR 2: Deteccion y Notificaciones
                   {whatsappPhoto && (
                     <img
                       src={whatsappPhoto || "/placeholder.svg"}
-                      alt="Perfil de WhatsApp"
+                      alt="WhatsApp Profile"
                       className="w-16 h-16 rounded-full object-cover border-2 border-green-400"
                     />
                   )}
                   <div>
                     <p className="text-lg md:text-xl text-green-400 flex items-center gap-2">
-                      <Phone className="text-green-400" size={28} /> TELEFONO ENCONTRADO
+                      <Phone className="text-green-400" size={28} /> PHONE FOUND
                     </p>
                     <p className="text-sm text-gray-300">{investigatedPhone}</p>
                   </div>
@@ -1302,65 +1302,65 @@ case 3: // ETAPA ANTERIOR 2: Deteccion y Notificaciones
               )}
               <div className="relative mt-6 p-3 bg-gray-800/50 rounded-lg border border-gray-700 animate-fade-in-delay-4">
                 <p className="text-base text-white font-mono">
-                  <span className="text-green-400">[REGISTRO_SISTEMA]</span> Nueva actividad detectada:
+                  <span className="text-green-400">[SYSTEM_LOG]</span> New activity detected:
                 </p>
                 <p className="text-base text-white font-mono ml-3">
-                  <span className="text-blue-400">[INSTAGRAM]</span> Nuevo mensaje de @
-                  {investigatedGender === "Femenino" ? "alex22" : "alexia_30"}.
+                  <span className="text-blue-400">[INSTAGRAM]</span> New message from @
+                  {investigatedGender === "Feminino" ? "alex22" : "alexia_30"}.
                 </p>
                 <p className="text-base text-white font-mono ml-3">
                   <span className="text-blue-400">[INSTAGRAM]</span> @
-                  {investigatedGender === "Femenino" ? "rodrigo.b" : "izes"} le dio like a tu foto.
+                  {investigatedGender === "Feminino" ? "rodrigo.b" : "izes"} liked your photo.
                 </p>
               </div>
 
-              {/* Notificaciones estilo Instagram */}
+              {/* Instagram-style notifications */}
               <div className="mt-6 space-y-3 text-left">
-                {/* Notificacion 1: Foto con Like */}
+                {/* Notification 1: Liked Photo */}
                 <div className="flex items-center gap-3 p-3 bg-gray-800/40 rounded-lg border border-gray-700 animate-fade-in-delay-5">
                   <img
                     src={
-                      investigatedGender === "Femenino"
+                      investigatedGender === "Feminino"
                         ? "/images/male-placeholder-1.jpg"
                         : "/images/female-placeholder-1.jpeg"
                     }
-                    alt="Avatar de Usuario"
+                    alt="User Avatar"
                     className="w-10 h-10 rounded-full object-cover border-2 border-pink-500"
                   />
                   <div className="flex-1">
                     <p className="text-white text-sm">
                       <span className="font-semibold">
-                        @{investigatedGender === "Femenino" ? "alex22" : "alexia_30"}
+                        @{investigatedGender === "Feminino" ? "alex22" : "alexia_30"}
                       </span>{" "}
-                      le dio like a tu foto
+                      liked your photo
                     </p>
-                    <p className="text-gray-400 text-xs">hace 2 minutos</p>
+                    <p className="text-gray-400 text-xs">2 minutes ago</p>
                   </div>
                   <Heart className="text-pink-500" size={16} />
                 </div>
 
-                {/* Notificacion 2: Nuevo Mensaje */}
+                {/* Notification 2: New Message */}
                 <div className="flex items-center gap-3 p-3 bg-gray-800/40 rounded-lg border border-gray-700 animate-fade-in-delay-6">
                   <img
                     src={
-                      investigatedGender === "Femenino"
+                      investigatedGender === "Feminino"
                         ? "/images/male-placeholder-2.jpg"
                         : "/images/female-placeholder-2.jpeg"
                     }
-                    alt="Avatar de Mensaje"
+                    alt="Message Avatar"
                     className="w-10 h-10 rounded-full object-cover border-2 border-blue-500"
                   />
                   <div className="flex-1">
                     <p className="text-white text-sm">
-                      <span className="font-semibold">@{investigatedGender === "Femenino" ? "rodrigo.b" : "izes"}</span>{" "}
-                      te envio un mensaje
+                      <span className="font-semibold">@{investigatedGender === "Feminino" ? "rodrigo.b" : "izes"}</span>{" "}
+                      sent you a message
                     </p>
-                    <p className="text-gray-400 text-xs">hace 5 minutos</p>
+                    <p className="text-gray-400 text-xs">5 minutes ago</p>
                   </div>
                   <MessageCircle className="text-blue-500" size={16} />
                 </div>
 
-                {/* Notificacion 3: Esta escribiendo... */}
+                {/* Notification 3: Is typing... */}
                 <div className="flex items-center gap-3 p-3 bg-gray-800/40 rounded-lg border border-gray-700 animate-fade-in-delay-7">
                   <img
                     src={
@@ -1368,21 +1368,21 @@ case 3: // ETAPA ANTERIOR 2: Deteccion y Notificaciones
                         ? `/api/instagram-image-proxy?url=${encodeURIComponent(instagramProfile.profile_pic_url)}`
                         : imagePreviewUrl || "/placeholder.svg"
                     }
-                    alt="Avatar de Usuario"
+                    alt="User Avatar"
                     className="w-10 h-10 rounded-full object-cover border-2 border-gray-500"
                     crossOrigin="anonymous"
                   />
                   <div>
                     <p className="text-sm text-white font-bold">
-                      {investigatedHandle || "@objetivo"}
-                      <span className="text-gray-400 font-normal ml-1">esta escribiendo...</span>
+                      {investigatedHandle || "@alvo"}
+                      <span className="text-gray-400 font-normal ml-1">is typing...</span>
                     </p>
-                    <p className="text-xs text-gray-500">Ahora mismo</p>
+                    <p className="text-xs text-gray-500">Just now</p>
                   </div>
                   <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse ml-auto"></span>
                 </div>
 
-                {/* Notificacion 4: Mensaje recibido despues de escribir */}
+                {/* Notification 4: Message received after typing (simulating "digita de novo") */}
                 <div className="flex items-center gap-3 p-3 bg-gray-800/40 rounded-lg border border-gray-700 animate-fade-in-delay-8">
                   <img
                     src={
@@ -1390,37 +1390,37 @@ case 3: // ETAPA ANTERIOR 2: Deteccion y Notificaciones
                         ? `/api/instagram-image-proxy?url=${encodeURIComponent(instagramProfile.profile_pic_url)}`
                         : imagePreviewUrl || "/placeholder.svg"
                     }
-                    alt="Avatar de Usuario"
+                    alt="User Avatar"
                     className="w-10 h-10 rounded-full object-cover border-2 border-blue-500"
                     crossOrigin="anonymous"
                   />
                   <div>
                     <p className="text-sm text-white font-bold">
-                      {investigatedHandle || "@objetivo"}
-                      <span className="text-gray-400 font-normal ml-1">envio un nuevo mensaje.</span>
+                      {investigatedHandle || "@alvo"}
+                      <span className="text-gray-400 font-normal ml-1">sent a new message.</span>
                     </p>
-                    <p className="text-xs text-gray-500">hace 1 minuto</p>
+                    <p className="text-xs text-gray-500">1 minute ago</p>
                   </div>
                   <MessageCircle size={20} className="text-blue-500 ml-auto" />
                 </div>
               </div>
             </div>
 
-            {/* Seccion original para imagenes borrosas y comentarios - retraso ajustado */}
+            {/* Original section for blurred images and comments - adjusted delay */}
             <div className="mt-6 space-y-5 text-left">
               <p className="text-xl md:text-2xl text-white font-bold animate-fade-in-delay-9">
-                <span className="text-red-400">INTERCEPTADO:</span> Likes Sospechosos de {investigatedHandle || "@objetivo"}
+                <span className="text-red-400">INTERCEPTED:</span> Suspicious Likes from {investigatedHandle || "@alvo"}
               </p>
 
-              {investigatedGender === "Femenino" ? (
+              {investigatedGender === "Feminino" ? (
                 <>
-                  {/* Fotos de hombres para investigacion de mujer */}
-                  {/* Foto con Like 1 - Hombre en la playa */}
+                  {/* Male Photos for Female Investigation */}
+                  {/* Liked Photo 1 - Man at beach */}
                   <div className="flex flex-col gap-2 p-3 bg-gray-800/40 rounded-lg border border-gray-700 animate-fade-in-delay-10">
                     <div className="relative w-full h-64 rounded-md overflow-hidden">
                       <img
                         src="/images/male-photo-beach.png"
-                        alt="Foto con Like 1"
+                        alt="Liked Photo 1"
                         className="w-full h-full object-cover filter blur-sm"
                       />
                       <div className="absolute inset-0 flex items-center justify-center bg-black/50">
@@ -1438,23 +1438,23 @@ case 3: // ETAPA ANTERIOR 2: Deteccion y Notificaciones
                             ? `/api/instagram-image-proxy?url=${encodeURIComponent(instagramProfile.profile_pic_url)}`
                             : imagePreviewUrl || "/placeholder.svg"
                         }
-                        alt="Avatar de Usuario"
+                        alt="User Avatar"
                         className="w-8 h-8 rounded-full object-cover border border-gray-500"
                         crossOrigin="anonymous"
                       />
                       <div>
-                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@objetivo"}</p>
-                        <p className="text-sm text-white">"muy guapo, todavia quiero conocerte en persona"</p>
+                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@alvo"}</p>
+                        <p className="text-sm text-white">"very beautiful, I still want to meet you in person"</p>
                       </div>
                     </div>
                   </div>
 
-                  {/* Foto con Like 2 - Hombre en el gimnasio */}
+                  {/* Liked Photo 2 - Man in gym */}
                   <div className="flex flex-col gap-2 p-3 bg-gray-800/40 rounded-lg border border-gray-700 animate-fade-in-delay-11">
                     <div className="relative w-full h-64 rounded-md overflow-hidden">
                       <img
                         src="/images/male-photo-gym.png"
-                        alt="Foto con Like 2"
+                        alt="Liked Photo 2"
                         className="w-full h-full object-cover filter blur-sm"
                       />
                       <div className="absolute inset-0 flex items-center justify-center bg-black/50">
@@ -1472,23 +1472,23 @@ case 3: // ETAPA ANTERIOR 2: Deteccion y Notificaciones
                             ? `/api/instagram-image-proxy?url=${encodeURIComponent(instagramProfile.profile_pic_url)}`
                             : imagePreviewUrl || "/placeholder.svg"
                         }
-                        alt="Avatar de Usuario"
+                        alt="User Avatar"
                         className="w-8 h-8 rounded-full object-cover border border-gray-500"
                         crossOrigin="anonymous"
                       />
                       <div>
-                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@objetivo"}</p>
-                        <p className="text-white text-sm">"Que hombre tan guapo!"</p>
+                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@alvo"}</p>
+                        <p className="text-white text-sm">"What a handsome man!"</p>
                       </div>
                     </div>
                   </div>
 
-                  {/* Foto con Like 3 - Hombre selfie en el bano */}
+                  {/* Liked Photo 3 - Man bathroom selfie */}
                   <div className="flex flex-col gap-2 p-3 bg-gray-800/40 rounded-lg border border-gray-700 animate-fade-in-delay-12">
                     <div className="relative w-full h-64 rounded-md overflow-hidden">
                       <img
                         src="/images/male-photo-bathroom.png"
-                        alt="Foto con Like 3"
+                        alt="Liked Photo 3"
                         className="w-full h-full object-cover filter blur-sm"
                       />
                       <div className="absolute inset-0 flex items-center justify-center bg-black/50">
@@ -1506,25 +1506,25 @@ case 3: // ETAPA ANTERIOR 2: Deteccion y Notificaciones
                             ? `/api/instagram-image-proxy?url=${encodeURIComponent(instagramProfile.profile_pic_url)}`
                             : imagePreviewUrl || "/placeholder.svg"
                         }
-                        alt="Avatar de Usuario"
+                        alt="User Avatar"
                         className="w-8 h-8 rounded-full object-cover border border-gray-500"
                         crossOrigin="anonymous"
                       />
                       <div>
-                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@objetivo"}</p>
+                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@alvo"}</p>
                         <p className="text-white text-sm">
-                          "Amigo, cada dia estas mas guapo, te extrano."
+                          "My friend, you're getting more handsome every day, I miss you."
                         </p>
                       </div>
                     </div>
                   </div>
 
-                  {/* Foto con Like 4 - Hombre ojos azules */}
+                  {/* Liked Photo 4 - Man bathroom selfie 2 */}
                   <div className="flex flex-col gap-2 p-3 bg-gray-800/40 rounded-lg border border-gray-700 animate-fade-in-delay-13">
                     <div className="relative w-full h-64 rounded-md overflow-hidden">
                       <img
                         src="/images/male-photo-blue-eyes.png"
-                        alt="Foto con Like 4"
+                        alt="Liked Photo 4"
                         className="w-full h-full object-cover filter blur-sm"
                       />
                       <div className="absolute inset-0 flex items-center justify-center bg-black/50">
@@ -1542,26 +1542,26 @@ case 3: // ETAPA ANTERIOR 2: Deteccion y Notificaciones
                             ? `/api/instagram-image-proxy?url=${encodeURIComponent(instagramProfile.profile_pic_url)}`
                             : imagePreviewUrl || "/placeholder.svg"
                         }
-                        alt="Avatar de Usuario"
+                        alt="User Avatar"
                         className="w-8 h-8 rounded-full object-cover border border-gray-500"
                         crossOrigin="anonymous"
                       />
                       <div>
-                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@objetivo"}</p>
-                        <p className="text-white text-sm">"Hola guapo, de que ciudad eres?"</p>
+                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@alvo"}</p>
+                        <p className="text-white text-sm">"Hi handsome, what city are you from?"</p>
                       </div>
                     </div>
                   </div>
                 </>
               ) : (
                 <>
-                  {/* Fotos de mujeres para investigacion de hombre/otro */}
-                  {/* Foto con Like 1 */}
+                  {/* Female Photos for Male/Other Investigation */}
+                  {/* Liked Photo 1 */}
                   <div className="flex flex-col gap-2 p-3 bg-gray-800/40 rounded-lg border border-gray-700 animate-fade-in-delay-10">
                     <div className="relative w-full h-64 rounded-md overflow-hidden">
                       <img
                         src="/images/liked-photo-princess.png"
-                        alt="Foto con Like 1"
+                        alt="Liked Photo 1"
                         className="w-full h-full object-cover filter blur-sm"
                       />
                       <div className="absolute inset-0 flex items-center justify-center bg-black/50">
@@ -1579,23 +1579,23 @@ case 3: // ETAPA ANTERIOR 2: Deteccion y Notificaciones
                             ? `/api/instagram-image-proxy?url=${encodeURIComponent(instagramProfile.profile_pic_url)}`
                             : imagePreviewUrl || "/placeholder.svg"
                         }
-                        alt="Avatar de Usuario"
+                        alt="User Avatar"
                         className="w-8 h-8 rounded-full object-cover border border-gray-500"
                         crossOrigin="anonymous"
                       />
                       <div>
-                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@objetivo"}</p>
-                        <p className="text-white text-sm">"Que princesa tan maravillosa."</p>
+                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@alvo"}</p>
+                        <p className="text-white text-sm">"What a wonderful princess."</p>
                       </div>
                     </div>
                   </div>
 
-                  {/* Foto con Like 2 */}
+                  {/* Liked Photo 2 */}
                   <div className="flex flex-col gap-2 p-3 bg-gray-800/40 rounded-lg border border-gray-700 animate-fade-in-delay-11">
                     <div className="relative w-full h-64 rounded-md overflow-hidden">
                       <img
                         src="/images/liked-photo-2.jpeg"
-                        alt="Foto con Like 2"
+                        alt="Liked Photo 2"
                         className="w-full h-full object-cover filter blur-sm"
                       />
                       <div className="absolute inset-0 flex items-center justify-center bg-black/50">
@@ -1613,13 +1613,13 @@ case 3: // ETAPA ANTERIOR 2: Deteccion y Notificaciones
                             ? `/api/instagram-image-proxy?url=${encodeURIComponent(instagramProfile.profile_pic_url)}`
                             : imagePreviewUrl || "/placeholder.svg"
                         }
-                        alt="Avatar de Usuario"
+                        alt="User Avatar"
                         className="w-8 h-8 rounded-full object-cover border border-gray-500"
                         crossOrigin="anonymous"
                       />
                       <div>
-                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@objetivo"}</p>
-                        <p className="text-sm text-white"> "Esos atardeceres son incomparables 🌅"</p>
+                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@alvo"}</p>
+                        <p className="text-sm text-white"> "Those sunsets are unbeatable 🌅"</p>
                       </div>
                     </div>
                   </div>
@@ -1628,7 +1628,7 @@ case 3: // ETAPA ANTERIOR 2: Deteccion y Notificaciones
                     <div className="relative w-full h-64 rounded-md overflow-hidden">
                       <img
                         src="/images/7b352510dd-8016-4bce-97de-8e8a5e4a141a-7d.png"
-                        alt="Foto con Like 3"
+                        alt="Liked Photo 3"
                         className="w-full h-full object-cover filter blur-sm"
                       />
                       <div className="absolute inset-0 flex items-center justify-center bg-black/50">
@@ -1646,23 +1646,23 @@ case 3: // ETAPA ANTERIOR 2: Deteccion y Notificaciones
                             ? `/api/instagram-image-proxy?url=${encodeURIComponent(instagramProfile.profile_pic_url)}`
                             : imagePreviewUrl || "/placeholder.svg"
                         }
-                        alt="Avatar de Usuario"
+                        alt="User Avatar"
                         className="w-8 h-8 rounded-full object-cover border border-gray-500"
                         crossOrigin="anonymous"
                       />
                       <div>
-                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@objetivo"}</p>
-                        <p className="text-white text-sm"> "La mujer mas perfecta que he visto ❤️"</p>
+                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@alvo"}</p>
+                        <p className="text-white text-sm"> "The most perfect woman I've ever seen ❤️"</p>
                       </div>
                     </div>
                   </div>
 
-                  {/* Foto con Like 4 */}
+                  {/* Liked Photo 4 */}
                   <div className="flex flex-col gap-2 p-3 bg-gray-800/40 rounded-lg border border-gray-700 animate-fade-in-delay-13">
                     <div className="relative w-full h-64 rounded-md overflow-hidden">
                       <img
                         src="/images/garotas-lindas-melhores-amigas-alegres-irmas-curtindo-a-festa.avif"
-                        alt="Foto con Like 4 - Grupo de amigas disfrutando una fiesta"
+                        alt="Liked Photo 4 - Group of friends enjoying a party"
                         className="w-full h-full object-cover filter blur-sm"
                       />
                       <div className="absolute inset-0 flex items-center justify-center bg-black/50">
@@ -1685,8 +1685,8 @@ case 3: // ETAPA ANTERIOR 2: Deteccion y Notificaciones
                         crossOrigin="anonymous"
                       />
                       <div>
-                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@objetivo"}</p>
-                        <p className="text-white text-sm"> "Que energia! Ojala estuviera ahi con ustedes."</p>
+                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@alvo"}</p>
+                        <p className="text-white text-sm"> "Great energy! Wish I was there with you all."</p>
                       </div>
                     </div>
                   </div>
@@ -1697,17 +1697,17 @@ case 3: // ETAPA ANTERIOR 2: Deteccion y Notificaciones
               onClick={nextStage}
               className="mt-10 px-10 py-5 text-xl font-bold uppercase bg-gradient-to-r from-pink-500 to-red-600 text-white shadow-lg hover:from-pink-600 hover:to-red-700 transition-all duration-300 transform hover:scale-105 animate-pulse-slow"
             >
-              ➡️ VER MAS
+              ➡️ SEE MORE
             </Button>
           </div>
         )
-case 4: // NUEVA ETAPA: Pantalla de Likes de Tinder
+case 4: // NEW STAGE: Tinder Likes Screen
   return (
   <div className="flex flex-col w-full max-w-md mx-auto bg-black text-white rounded-lg shadow-lg h-[calc(100vh-4rem)] overflow-y-auto">
   <LimitWarningBanner />
-  {/* Barra Superior */}
+  {/* Top Bar */}
             <div className="relative flex items-center justify-between p-3 bg-gray-900 border-b border-gray-800 flex-shrink-0">
-              {/* Izquierda: Perfil de Usuario */}
+              {/* Left: User Profile */}
               <div className="flex items-center gap-2 z-10">
                 <img
                   src={
@@ -1715,21 +1715,21 @@ case 4: // NUEVA ETAPA: Pantalla de Likes de Tinder
                       ? `/api/instagram-image-proxy?url=${encodeURIComponent(instagramProfile.profile_pic_url)}`
                       : imagePreviewUrl || "/user-profile-illustration.png"
                   }
-                  alt="Perfil de Usuario"
+                  alt="User Profile"
                   className="w-10 h-10 rounded-full object-cover border-2 border-red-500"
                   crossOrigin="anonymous"
                 />
                 <span className="text-white font-bold text-lg truncate max-w-[120px]">
-                  {investigatedHandle || "@tu_perfil"}
+                  {investigatedHandle || "@your_profile"}
                 </span>
               </div>
 
-              {/* Derecha: Navegacion Secundaria */}
+              {/* Right: Secondary Navigation */}
               <div className="flex space-x-3 text-gray-400 text-xs z-10">
                 <span className="font-bold text-white border-b-2 border-red-500 pb-1">5 likes</span>
-                <span className="hidden sm:block">Likes enviados</span>
+                <span className="hidden sm:block">Likes sent</span>
                 <span className="hidden sm:block">
-                  Destacados <span className="inline-block w-1.5 h-1.5 bg-red-500 rounded-full ml-0.5"></span>
+                  Highlights <span className="inline-block w-1.5 h-1.5 bg-red-500 rounded-full ml-0.5"></span>
                 </span>
               </div>
             </div>
@@ -1738,9 +1738,9 @@ case 4: // NUEVA ETAPA: Pantalla de Likes de Tinder
               <span className="text-red-500 font-bold text-xl">tinder</span>
             </div>
 
-            {/* Contenido Principal - "Mira quien ya te dio like." */}
+            {/* Main Content - "Veja quem já curtiu você." */}
             <div className="p-3 text-center bg-gray-900 flex-shrink-0">
-              <p className="text-base text-gray-300">mira quien ya te dio like.</p>
+              <p className="text-base text-gray-300">see who already liked you.</p>
             </div>
 
             <div className="flex items-center justify-center gap-3 p-4 bg-blue-600/80 text-white font-bold text-lg rounded-lg mx-auto mt-4 w-[90%] animate-fade-in flex-shrink-0">
@@ -1750,11 +1750,11 @@ case 4: // NUEVA ETAPA: Pantalla de Likes de Tinder
                     ? `/api/instagram-image-proxy?url=${encodeURIComponent(instagramProfile.profile_pic_url)}`
                     : imagePreviewUrl || "/super-like-sender.jpg"
                 }
-                alt="Enviador de Super Like"
+                alt="Super Like Sender"
                 className="w-10 h-10 rounded-full object-cover border-2 border-yellow-300"
                 crossOrigin="anonymous"
               />
-              <span>Recibiste un Super Like!</span>
+              <span>You received a Super Like!</span>
               <Star size={24} className="text-yellow-300 fill-yellow-300" />
             </div>
 
@@ -1762,19 +1762,19 @@ case 4: // NUEVA ETAPA: Pantalla de Likes de Tinder
               <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg animate-fade-in">
                 <div className="flex items-center gap-2">
                   <X size={20} />
-                  <span className="font-bold">Perdiste un match!</span>
+                  <span className="font-bold">You missed a match!</span>
                 </div>
               </div>
             )}
 
-            {/* Tarjeta de Perfil Principal (con overlay de candado y carrusel) */}
+            {/* Main Profile Card (with lock overlay and carousel) */}
             <div className="relative w-full h-96 bg-gray-800 rounded-lg overflow-hidden mx-auto mt-4 flex-shrink-0">
-              {/* Contenedor del carrusel de fotos */}
+              {/* Photo carousel container */}
               <div className="relative w-full h-full">
-                {/* Foto actual */}
+                {/* Current photo */}
                 <img
                   src={
-                    investigatedGender === "Femenino"
+                    investigatedGender === "Feminino"
                       ? currentPhotoIndex === 0
                         ? "/images/tinder-male-rafael.png"
                         : currentPhotoIndex === 1
@@ -1786,18 +1786,18 @@ case 4: // NUEVA ETAPA: Pantalla de Likes de Tinder
                           ? "/images/tinder-female-2.jpg"
                           : "/images/tinder-female-3.jpg"
                   }
-                  alt={`Foto de Perfil ${currentPhotoIndex + 1}`}
+                  alt={`Profile Photo ${currentPhotoIndex + 1}`}
                   className="w-full h-full object-cover blur-sm"
                 />
 
-                {/* Overlay de candado */}
+                {/* Lock overlay */}
                 <div className="absolute inset-0 flex items-center justify-center bg-black/30">
                   <div className="bg-gray-900/80 p-3 rounded-full">
                     <Lock size={32} className="text-gray-300" />
                   </div>
                 </div>
 
-                {/* Indicadores de fotos */}
+                {/* Photo indicators */}
                 <div className="absolute top-2 left-2 right-2 flex gap-1">
                   {[0, 1, 2].map((index) => (
                     <div
@@ -1807,7 +1807,7 @@ case 4: // NUEVA ETAPA: Pantalla de Likes de Tinder
                   ))}
                 </div>
 
-                {/* Flechas de navegacion */}
+                {/* Navigation arrows */}
                 <button
                   onClick={() => setCurrentPhotoIndex(currentPhotoIndex > 0 ? currentPhotoIndex - 1 : 2)}
                   className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all"
@@ -1821,7 +1821,7 @@ case 4: // NUEVA ETAPA: Pantalla de Likes de Tinder
                   <ChevronRight size={20} />
                 </button>
 
-                {/* Area tactil/deslizar para movil */}
+                {/* Touch/swipe area for mobile */}
                 <div
                   className="absolute inset-0 cursor-pointer"
                   onTouchStart={(e) => {
@@ -1834,12 +1834,12 @@ case 4: // NUEVA ETAPA: Pantalla de Likes de Tinder
                     const diff = touchStart - touch.clientX
 
                     if (Math.abs(diff) > 50) {
-                      // Distancia minima de deslizamiento
+                      // Minimum swipe distance
                       if (diff > 0) {
-                        // Deslizar izquierda - siguiente foto
+                        // Swipe left - next photo
                         setCurrentPhotoIndex(currentPhotoIndex < 2 ? currentPhotoIndex + 1 : 0)
                       } else {
-                        // Deslizar derecha - foto anterior
+                        // Swipe right - previous photo
                         setCurrentPhotoIndex(currentPhotoIndex > 0 ? currentPhotoIndex - 1 : 2)
                       }
                     }
@@ -1847,22 +1847,22 @@ case 4: // NUEVA ETAPA: Pantalla de Likes de Tinder
                   }}
                 />
 
-                {/* Overlay de info del perfil */}
+                {/* Profile info overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
                   {currentPhotoIndex === 0 && (
                     <>
                       <p className="text-xl font-bold">
-                        {investigatedGender === "Femenino" ? "Rafael, 30" : "Isabella, 30"}
+                        {investigatedGender === "Feminino" ? "Rafael, 30" : "Izabelle, 30"}
                       </p>
                       <p className="flex items-center gap-1 text-sm text-gray-300">
-                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> En linea recientemente...
+                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> Online recently...
                       </p>
                     </>
                   )}
                   {currentPhotoIndex === 1 && (
                     <>
-                      <p className="text-xl font-bold">Likes enviados</p>
-                      <p className="text-sm text-gray-300">Ver actividad</p>
+                      <p className="text-xl font-bold">Likes sent</p>
+                      <p className="text-sm text-gray-300">View activity</p>
                     </>
                   )}
                   {currentPhotoIndex === 2 && (
@@ -1874,7 +1874,7 @@ case 4: // NUEVA ETAPA: Pantalla de Likes de Tinder
               </div>
             </div>
 
-            {/* Botones de Like/Nope debajo de la tarjeta de perfil principal */}
+            {/* Like/Nope Buttons below the main profile card */}
             <div className="flex justify-center gap-6 py-4 bg-gray-900 flex-shrink-0">
               <Button
                 size="icon"
@@ -1890,15 +1890,15 @@ case 4: // NUEVA ETAPA: Pantalla de Likes de Tinder
               </Button>
             </div>
 
-            {/* Cuadricula de otros perfiles (borrosos, uno con overlay de Match) */}
+            {/* Grid of other profiles (blurred, one with Match overlay) */}
             <div className="grid grid-cols-2 gap-2 p-2 bg-gray-950 flex-grow">
-              {investigatedGender === "Femenino" ? (
+              {investigatedGender === "Feminino" ? (
                 <>
-                  {/* Perfil Masculino 1 con Candado */}
+                  {/* Male Profile 1 with Lock */}
                   <div className="relative w-full h-60 bg-gray-800 rounded-lg overflow-hidden">
                     <img
                       src="/images/tinder-male-1.jpg"
-                      alt="Perfil 1"
+                      alt="Profile 1"
                       className="w-full h-full object-cover filter blur-sm"
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -1907,19 +1907,19 @@ case 4: // NUEVA ETAPA: Pantalla de Likes de Tinder
                       </div>
                     </div>
                     <div className="absolute bottom-2 left-2 text-white text-sm">
-                      <p className="font-semibold text-base">brunito</p>
+                      <p className="font-semibold text-base">bruninho</p>
                       <span className="bg-gray-700/70 px-2 py-1 rounded-full">29</span>
                       <p className="flex items-center gap-1 mt-1">
-                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> En linea recientemente...
+                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> Online recently...
                       </p>
                     </div>
                   </div>
 
-                  {/* Perfil Masculino 2 con Candado */}
+                  {/* Male Profile 2 with Lock */}
                   <div className="relative w-full h-60 bg-gray-800 rounded-lg overflow-hidden">
                     <img
                       src="/images/tinder-male-2.jpg"
-                      alt="Perfil 2"
+                      alt="Profile 2"
                       className="w-full h-full object-cover filter blur-sm"
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -1931,16 +1931,16 @@ case 4: // NUEVA ETAPA: Pantalla de Likes de Tinder
                       <p className="font-semibold text-base">ricardo</p>
                       <span className="bg-gray-700/70 px-2 py-1 rounded-full">31</span>
                       <p className="flex items-center gap-1 mt-1">
-                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> En linea recientemente...
+                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> Online recently...
                       </p>
                     </div>
                   </div>
 
-                  {/* Perfil Masculino 3 con Candado */}
+                  {/* Male Profile 3 with Lock */}
                   <div className="relative w-full h-60 bg-gray-800 rounded-lg overflow-hidden">
                     <img
                       src="/images/tinder-male-3.jpg"
-                      alt="Perfil 3"
+                      alt="Profile 3"
                       className="w-full h-full object-cover filter blur-sm"
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -1952,16 +1952,16 @@ case 4: // NUEVA ETAPA: Pantalla de Likes de Tinder
                       <p className="font-semibold text-base">alex</p>
                       <span className="bg-gray-700/70 px-2 py-1 rounded-full">27</span>
                       <p className="flex items-center gap-1 mt-1">
-                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> En linea recientemente...
+                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> Online recently...
                       </p>
                     </div>
                   </div>
 
-                  {/* Perfil Masculino 4 con Candado */}
+                  {/* Male Profile 4 with Lock */}
                   <div className="relative w-full h-60 bg-gray-800 rounded-lg overflow-hidden">
                     <img
                       src="/images/tinder-male-4.jpg"
-                      alt="Perfil 4"
+                      alt="Profile 4"
                       className="w-full h-full object-cover filter blur-sm"
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -1970,21 +1970,21 @@ case 4: // NUEVA ETAPA: Pantalla de Likes de Tinder
                       </div>
                     </div>
                     <div className="absolute bottom-2 left-2 text-white text-sm">
-                      <p className="font-semibold text-base">marcos</p>
+                      <p className="font-semibold text-base">marcus</p>
                       <span className="bg-gray-700/70 px-2 py-1 rounded-full">30</span>
                       <p className="flex items-center gap-1 mt-1">
-                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> En linea recientemente...
+                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> Online recently...
                       </p>
                     </div>
                   </div>
                 </>
               ) : (
                 <>
-                  {/* Tarjeta 1: Imagen Femenina 1 con Candado */}
+                  {/* Card 1: Female Image 1 with Lock */}
                   <div className="relative w-full h-60 bg-gray-800 rounded-lg overflow-hidden">
                     <img
                       src="/images/tinder-female-1.jpg"
-                      alt="Perfil 1"
+                      alt="Profile 1"
                       className="w-full h-full object-cover filter blur-sm"
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -1993,19 +1993,19 @@ case 4: // NUEVA ETAPA: Pantalla de Likes de Tinder
                       </div>
                     </div>
                     <div className="absolute bottom-2 left-2 text-white text-sm">
-                      <p className="font-semibold text-base">gabita</p>
+                      <p className="font-semibold text-base">gabyzinha</p>
                       <span className="bg-gray-700/70 px-2 py-1 rounded-full">26</span>
                       <p className="flex items-center gap-1 mt-1">
-                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> En linea recientemente...
+                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> Online recently...
                       </p>
                     </div>
                   </div>
 
-                  {/* Tarjeta 2: Imagen Femenina 2 con Candado */}
+                  {/* Card 2: Female Image 2 with Lock */}
                   <div className="relative w-full h-60 bg-gray-800 rounded-lg overflow-hidden">
                     <img
                       src="/images/tinder-female-2.jpg"
-                      alt="Perfil 2"
+                      alt="Profile 2"
                       className="w-full h-full object-cover filter blur-sm"
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -2014,19 +2014,19 @@ case 4: // NUEVA ETAPA: Pantalla de Likes de Tinder
                       </div>
                     </div>
                     <div className="absolute bottom-2 left-2 text-white text-sm">
-                      <p className="font-semibold text-base">renata</p>
+                      <p className="font-semibold text-base">renatinha</p>
                       <span className="bg-gray-700/70 px-2 py-1 rounded-full">28</span>
                       <p className="flex items-center gap-1 mt-1">
-                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> En linea recientemente...
+                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> Online recently...
                       </p>
                     </div>
                   </div>
 
-                  {/* Tarjeta 3: Imagen Femenina 3 con Candado */}
+                  {/* Card 3: Female Image 3 with Lock */}
                   <div className="relative w-full h-60 bg-gray-800 rounded-lg overflow-hidden">
                     <img
                       src="/images/tinder-female-3.jpg"
-                      alt="Perfil 3"
+                      alt="Profile 3"
                       className="w-full h-full object-cover filter blur-sm"
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -2038,16 +2038,16 @@ case 4: // NUEVA ETAPA: Pantalla de Likes de Tinder
                       <p className="font-semibold text-base">bruna</p>
                       <span className="bg-gray-700/70 px-2 py-1 rounded-full">25</span>
                       <p className="flex items-center gap-1 mt-1">
-                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> En linea recientemente...
+                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> Online recently...
                       </p>
                     </div>
                   </div>
 
-                  {/* Tarjeta 4: Imagen Femenina 4 con Candado */}
+                  {/* Card 4: Female Image 4 with Lock */}
                   <div className="relative w-full h-60 bg-gray-800 rounded-lg overflow-hidden">
                     <img
                       src="/images/tinder-female-4.jpg"
-                      alt="Perfil 4"
+                      alt="Profile 4"
                       className="w-full h-full object-cover filter blur-sm"
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -2059,7 +2059,7 @@ case 4: // NUEVA ETAPA: Pantalla de Likes de Tinder
                       <p className="font-semibold text-base">bruna</p>
                       <span className="bg-gray-700/70 px-2 py-1 rounded-full">24</span>
                       <p className="flex items-center gap-1 mt-1">
-                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> En linea recientemente...
+                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> Online recently...
                       </p>
                     </div>
                   </div>
@@ -2067,15 +2067,15 @@ case 4: // NUEVA ETAPA: Pantalla de Likes de Tinder
               )}
             </div>
 
-            {/* Navegacion Inferior */}
+            {/* Bottom Navigation */}
             <div className="flex justify-around items-center p-2 bg-gray-900 border-t border-gray-800 flex-shrink-0">
               <div className="flex flex-col items-center text-gray-400">
                 <Home size={20} />
-                <span className="text-xs">Inicio</span>
+                <span className="text-xs">Home</span>
               </div>
               <div className="flex flex-col items-center text-gray-400">
                 <Compass size={20} />
-                <span className="text-xs">Explorar</span>
+                <span className="text-xs">Explore</span>
               </div>
               <div className="relative flex flex-col items-center text-red-500">
                 <Heart size={20} />
@@ -2090,7 +2090,7 @@ case 4: // NUEVA ETAPA: Pantalla de Likes de Tinder
               </div>
               <div className="flex flex-col items-center text-gray-400">
                 <User size={20} />
-                <span className="text-xs">Perfil</span>
+                <span className="text-xs">Profile</span>
               </div>
             </div>
 
@@ -2098,45 +2098,45 @@ case 4: // NUEVA ETAPA: Pantalla de Likes de Tinder
               onClick={nextStage}
               className="mt-3 px-10 py-5 text-xl font-bold uppercase bg-gradient-to-r from-red-600 to-red-800 text-white shadow-lg hover:from-red-700 hover:to-gray-900 transition-all duration-300 transform hover:scale-105 animate-pulse-slow flex-shrink-0"
             >
-              ➡️ DESBLOQUEAR DETALLES
+              ➡️ UNLOCK DETAILS
             </Button>
           </div>
         )
-case 5: // ETAPA ANTERIOR 3: Revelacion
+case 5: // OLD STAGE 3: Revelation
   return (
   <div className="text-center space-y-8">
   <LimitWarningBanner />
   <div className="grid gap-3 text-left max-w-xl mx-auto">
   <p className="text-lg md:text-xl text-white animate-fade-in">
-  <span className="text-red-400 font-bold">ALERTA:</span> Mensajes privados con contenido sugestivo.
+  <span className="text-red-400 font-bold">ALERT:</span> Private messages with suggestive content.
               </p>
               <p className="text-lg md:text-xl text-white animate-fade-in-delay-1">
-                <span className="text-red-400 font-bold">ALERTA:</span> Likes en fotos de perfiles desconocidos.
+                <span className="text-red-400 font-bold">ALERT:</span> Likes on unknown profiles' photos.
               </p>
               <p className="text-lg md:text-xl text-white animate-fade-in-delay-2">
-                <span className="text-red-400 font-bold">ALERTA:</span> Interacciones antiguas recuperadas.
+                <span className="text-red-400 font-bold">ALERT:</span> Old interactions recovered.
               </p>
             </div>
             <Button
               onClick={nextStage}
               className="mt-10 px-10 py-5 text-xl font-bold uppercase bg-gradient-to-r from-red-600 to-red-800 text-white shadow-lg hover:from-red-700 hover:to-gray-900 transition-all duration-300 transform hover:scale-105 animate-pulse-slow"
             >
-              ➡️ DESBLOQUEAR DETALLES
+              ➡️ UNLOCK DETAILS
             </Button>
           </div>
         )
-      case 6: // ETAPA ANTERIOR 4: CTA Final
+      case 6: // OLD STAGE 4: Final CTA
         return (
           <div className="text-center space-y-8">
             <p className="text-3xl md:text-4xl font-bold text-white max-w-2xl mx-auto leading-relaxed animate-fade-in">
-              "Quieres acceso completo a perfiles secretos, conversaciones eliminadas e historial de likes?"
+              "Want full access to secret profiles, deleted conversations, and like history?"
             </p>
             {timeLeft > 0 ? (
               <p className="text-2xl md:text-3xl font-bold text-yellow-400 animate-pulse">
-                La oferta termina en: {formatTime(timeLeft)}
+                Offer ends in: {formatTime(timeLeft)}
               </p>
             ) : (
-              <p className="text-2xl md:text-3xl font-bold text-red-500">Oferta expirada!</p>
+              <p className="text-2xl md:text-3xl font-bold text-red-500">Offer expired!</p>
             )}
             <Button
               onClick={() =>
@@ -2145,13 +2145,13 @@ case 5: // ETAPA ANTERIOR 3: Revelacion
               disabled={timeLeft === 0}
               className="mt-10 px-10 py-5 text-xl font-bold uppercase bg-gradient-to-r from-red-700 to-black text-white shadow-lg hover:from-red-800 hover:to-gray-900 transition-all duration-300 transform hover:scale-105 animate-pulse-slow disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              💣 VER RESULTADO FINAL
+              💣 SEE FINAL RESULT
             </Button>
 
-            {/* Notificaciones de Acceso Aleatorias */}
+            {/* Random Access Notifications */}
             <div className="mt-8 w-full max-w-md mx-auto text-left space-y-2 p-4 bg-gray-800/50 rounded-lg border border-gray-700">
               <p className="text-lg font-bold text-white mb-3">
-                <span className="text-green-400">[EN VIVO]</span> Accesos Recientes:
+                <span className="text-green-400">[LIVE FEED]</span> Recent Accesses:
               </p>
               {randomNotifications.map((notification) => (
                 <div key={notification.id} className="flex items-center gap-2 text-sm text-gray-300 animate-fade-in">
@@ -2170,10 +2170,10 @@ case 5: // ETAPA ANTERIOR 3: Revelacion
     }
   }
 
-  // Componente de Limite Alcanzado
+  // Limit Reached Component
   const LimitReachedScreen = () => (
     <div className="relative min-h-screen flex items-center justify-center p-4 overflow-hidden bg-gradient-to-br from-black via-gray-900 to-red-900 font-inter">
-      {/* Fondo estilo Matrix */}
+      {/* Matrix-style background */}
       <div 
         className="absolute inset-0 opacity-20 overflow-hidden"
         style={{
@@ -2192,7 +2192,7 @@ case 5: // ETAPA ANTERIOR 3: Revelacion
 
       <div className="relative z-10 w-full max-w-md mx-auto">
         <div className="bg-gray-900/95 rounded-2xl p-8 border border-gray-800 shadow-2xl">
-          {/* Foto de Perfil con Anillo Arcoiris */}
+          {/* Profile Picture with Rainbow Ring */}
           <div className="flex justify-center mb-6">
             <div className="relative">
               <div 
@@ -2205,7 +2205,7 @@ case 5: // ETAPA ANTERIOR 3: Revelacion
                   {limitData?.profilePicUrl ? (
                     <img
                       src={`/api/instagram-image-proxy?url=${encodeURIComponent(limitData.profilePicUrl)}`}
-                      alt="Perfil"
+                      alt="Profile"
                       className="w-full h-full object-cover"
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = "/placeholder-user.jpg"
@@ -2221,39 +2221,39 @@ case 5: // ETAPA ANTERIOR 3: Revelacion
             </div>
           </div>
 
-          {/* Titulo de Limite Alcanzado */}
+          {/* Limit Reached Title */}
           <div className="text-center mb-6">
             <div className="flex items-center justify-center gap-2 mb-2">
               <AlertTriangle className="text-red-500" size={24} />
-              <h2 className="text-2xl font-bold text-red-500">Limite Alcanzado</h2>
+              <h2 className="text-2xl font-bold text-red-500">Limit Reached</h2>
             </div>
             <p className="text-gray-300">
-              Ya has usado tu <span className="font-bold text-white">busqueda gratis</span>
+              You have already used your <span className="font-bold text-white">free search</span>
             </p>
             <p className="text-gray-300">
-              para espiar a <span className="text-purple-400 font-semibold">@{limitData?.searchedUsername}</span>
+              to spy on <span className="text-purple-400 font-semibold">@{limitData?.searchedUsername}</span>
             </p>
           </div>
 
-{/* CTA de Acceso VIP */}
+{/* VIP Access CTA */}
   <div className="text-center mb-6">
   <p className="text-gray-400 mb-4">
-  Obtén <span className="font-bold text-white">acceso VIP</span> y ten acceso completo a Instagram ahora mismo!
+  Get <span className="font-bold text-white">VIP access</span> and have full Instagram access right now!
   </p>
   <Button
     onClick={() => window.location.href = "https://pay.mycheckoutt.com/01997889-d90f-7176-b1ad-330b2aadd114?ref="}
     className="w-full mt-4 px-10 py-5 text-xl font-bold uppercase bg-gradient-to-r from-red-700 to-black text-white shadow-lg hover:from-red-800 hover:to-gray-900 transition-all duration-300 transform hover:scale-105 animate-pulse-slow"
   >
-    VER RESULTADO FINAL
+    SEE FINAL RESULT
   </Button>
   </div>
 
-          {/* Caja de Advertencia */}
+          {/* Warning Box */}
           <div className="p-4 bg-red-900/30 border border-red-700 rounded-lg">
             <p className="text-sm text-center">
-              <span className="font-bold text-red-400">Tu identidad esta comprometida!</span>{" "}
+              <span className="font-bold text-red-400">Your identity is compromised!</span>{" "}
               <span className="text-gray-300">
-                {limitData?.fullName || limitData?.searchedUsername} puede ser notificado sobre tu espionaje, solo los miembros VIP tienen su privacidad preservada durante el espionaje.
+                {limitData?.fullName || limitData?.searchedUsername} may be notified about your spying, only VIP members have their privacy preserved during spying.
               </span>
             </p>
           </div>
@@ -2262,15 +2262,15 @@ case 5: // ETAPA ANTERIOR 3: Revelacion
     </div>
   )
 
-  // Mostrar pantalla de limite alcanzado si se excede el limite
+  // Show limit reached screen if limit is exceeded
   if (showLimitReached && limitData) {
     return <LimitReachedScreen />
   }
 
   return (
     <div className="relative min-h-screen flex items-center justify-center p-4 overflow-hidden bg-gradient-to-br from-black via-gray-900 to-red-900 font-inter">
-      {/* Se cambio font-roboto a font-inter */}
-      {/* Patron de cuadricula de fondo */}
+      {/* Changed font-roboto to font-inter */}
+      {/* Background grid pattern */}
       <div
         className={`absolute inset-0 opacity-10 animate-pulse-grid`}
         style={{
