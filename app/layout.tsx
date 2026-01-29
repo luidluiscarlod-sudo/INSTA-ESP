@@ -16,14 +16,14 @@ const spaceMono = Space_Mono({
 })
 
 export const metadata = {
-  title: "SPY 3 - Secret Social Scan",
-  description: "Discover hidden profiles, private messages, and suspicious likes.",
+  title: "SPY 3 - Escaneo Social Secreto",
+  description: "Descubre perfiles ocultos, mensajes privados y likes sospechosos.",
     generator: 'v0.app'
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="es" suppressHydrationWarning>
       <head>
         <Script
           id="gtm-script"
