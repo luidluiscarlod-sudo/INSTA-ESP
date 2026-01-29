@@ -131,7 +131,7 @@ function SpySystemContent() {
   const [investigatedPhone, setInvestigatedPhone] = useState<string>("")
   const [analysisProgress, setAnalysisProgress] = useState(0)
   const [isAnalyzing, setIsAnalyzing] = useState(false)
-  const [analysisMessage, setAnalysisMessage] = useState("Initializing scan...")
+  const [analysisMessage, setAnalysisMessage] = useState("Iniciando escaneo...")
   const [animationFrame, setAnimationFrame] = useState(0) // New state for animation frame
   const [timeLeft, setTimeLeft] = useState(10 * 60) // 10 minutes in seconds for the countdown
   const [showMissedMatch, setShowMissedMatch] = useState(false)
@@ -181,12 +181,12 @@ function SpySystemContent() {
     "Sofia Mendes",
   ]
   const notificationActions = [
-    "accessed the final result.",
-    "downloaded the full report.",
-    "viewed private data.",
-    "initiated a new scan.",
-    "shared the findings.",
-    "verified the intelligence.",
+    "accedio al resultado final.",
+    "descargo el informe completo.",
+    "vio datos privados.",
+    "inicio un nuevo escaneo.",
+    "compartio los hallazgos.",
+    "verifico la inteligencia.",
   ]
 
   // Add these arrays for placeholder images
@@ -457,16 +457,16 @@ function SpySystemContent() {
     const increment = 100 / (totalDuration / intervalDuration)
 
     const messages = [
-      "Analyzing facial biometrics and unique identifiers...",
-      "Cross-referencing encrypted public and private databases...",
-      "Establishing secure connection to social network APIs...",
-      "Decrypting hidden profiles and shadow accounts...",
-      "Extracting private message logs and media attachments...",
-      "Phone number found! Cross-referencing with social profiles...",
-      "Identifying anomalous interaction patterns and suspicious likes...",
-      "Compiling comprehensive intelligence report...",
-      "Finalizing data integrity verification and extraction...",
-      "Analysis complete. Results ready for decryption.",
+      "Analizando biometria facial e identificadores unicos...",
+      "Cruzando bases de datos publicas y privadas encriptadas...",
+      "Estableciendo conexion segura con APIs de redes sociales...",
+      "Descifrando perfiles ocultos y cuentas secretas...",
+      "Extrayendo registros de mensajes privados y archivos adjuntos...",
+      "Numero de telefono encontrado! Cruzando con perfiles sociales...",
+      "Identificando patrones de interaccion anomalos y likes sospechosos...",
+      "Compilando informe de inteligencia completo...",
+      "Finalizando verificacion de integridad de datos y extraccion...",
+      "Analisis completado. Resultados listos para descifrar.",
     ]
     let messageIndex = 0
 
@@ -586,7 +586,7 @@ const fetchWhatsAppPhoto = async (phoneNumber: string, countryCode: string) => {
     <div className="w-full max-w-md mx-auto mb-4 px-4 py-2 bg-yellow-500/20 border border-yellow-500/50 rounded-lg">
       <p className="text-center text-xs text-yellow-400">
         <AlertTriangle className="inline-block mr-1 mb-0.5" size={12} />
-        <span className="font-semibold">Attention:</span> You only have <span className="font-bold text-white">1 FREE search</span> per device
+        <span className="font-semibold">Atencion:</span> Solo tienes <span className="font-bold text-white">1 busqueda GRATIS</span> por dispositivo
       </p>
     </div>
   )
@@ -606,11 +606,14 @@ const fetchWhatsAppPhoto = async (phoneNumber: string, countryCode: string) => {
           <div className="text-center space-y-8">
             <LimitWarningBanner />
             <p className="text-4xl md:text-5xl font-bold text-white tracking-wider animate-pulse">INSTA CHECK 3</p>
-            <h1 className="text-2xl md:text-3xl font-bold text-white tracking-wider animate-pulse">
-              💔 FEELING BETRAYED?
+<h1 className="text-2xl md:text-3xl font-bold text-white tracking-wider animate-pulse">
+              💔 TE SIENTES TRAICIONADO/A?
             </h1>
             <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-              “You deserve to know the truth. Even the conversations he tried to hide…”
+              "Mereces saber la verdad. Incluso las conversaciones que intento ocultar..."
+            </p>
+            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+              Descubre perfiles ocultos, mensajes privados y likes sospechosos en:
             </p>
             <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
               Discover hidden profiles, private messages, and suspicious likes on:
@@ -634,14 +637,14 @@ const fetchWhatsAppPhoto = async (phoneNumber: string, countryCode: string) => {
               </div>
               <div className="flex flex-col items-center gap-2">
                 <MapPin className="text-orange-500" size={56} />
-                <span className="text-white text-base">Location</span>
+                <span className="text-white text-base">Ubicacion</span>
               </div>
             </div>
             <Button
               onClick={nextStage}
               className="mt-10 px-10 py-5 text-xl font-bold uppercase bg-gradient-to-r from-pink-500 to-red-600 text-white shadow-lg hover:from-pink-600 hover:to-red-700 transition-all duration-300 transform hover:scale-105 animate-pulse-slow"
             >
-              ➡️ START SCANNING
+              ➡️ INICIAR ESCANEO
             </Button>
           </div>
         )
@@ -650,17 +653,17 @@ const fetchWhatsAppPhoto = async (phoneNumber: string, countryCode: string) => {
           <div className="text-center space-y-6 px-4">
             <LimitWarningBanner />
             <h2 className="text-2xl md:text-4xl font-bold text-white animate-fade-in">
-              📊 <span className="text-pink-400">TARGET</span> PROFILE
+              📊 PERFIL DEL <span className="text-pink-400">OBJETIVO</span>
             </h2>
             <p className="text-lg md:text-xl text-gray-300 animate-fade-in-delay-1">
-              Complete the investigation profile for enhanced analysis
+              Completa el perfil de investigacion para un analisis mejorado
             </p>
             <div className="w-full max-w-sm mx-auto space-y-4">
               <div className="relative">
                 <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
                 <input
                   type="number"
-                  placeholder="Age of the investigated person"
+                  placeholder="Edad de la persona investigada"
                   value={investigatedAge}
                   onChange={(e) => setInvestigatedAge(e.target.value)}
                   className="w-full p-3 pl-10 bg-gray-800/50 border border-gray-700 rounded-lg text-white text-base focus:outline-none focus:ring-2 focus:ring-pink-500"
@@ -692,11 +695,11 @@ const fetchWhatsAppPhoto = async (phoneNumber: string, countryCode: string) => {
                   className="w-full p-3 pl-10 bg-gray-800/50 border border-gray-700 rounded-lg text-white text-base appearance-none focus:outline-none focus:ring-2 focus:ring-pink-500"
                 >
                   <option value="" disabled>
-                    Select Gender
+                    Seleccionar Genero
                   </option>
-                  <option value="Masculino">Male</option>
-                  <option value="Feminino">Female</option>
-                  <option value="Outro">Other</option>
+                  <option value="Masculino">Masculino</option>
+                  <option value="Feminino">Femenino</option>
+                  <option value="Outro">Otro</option>
                 </select>
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
                   <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -708,7 +711,7 @@ const fetchWhatsAppPhoto = async (phoneNumber: string, countryCode: string) => {
                 <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
                 <input
                   type="text"
-                  placeholder="Location (e.g., New York, USA)"
+                  placeholder="Ubicacion (ej: Madrid, Espana)"
                   value={investigatedLocation}
                   onChange={(e) => setInvestigatedLocation(e.target.value)}
                   className="w-full p-3 pl-10 bg-gray-800/50 border border-gray-700 rounded-lg text-white text-base focus:outline-none focus:ring-2 focus:ring-pink-500"
@@ -946,7 +949,7 @@ const fetchWhatsAppPhoto = async (phoneNumber: string, countryCode: string) => {
                   </select>
                   <input
                     type="tel"
-                    placeholder="Phone number"
+                    placeholder="Numero de telefono"
                     value={investigatedPhone.split(" ")[1] || ""}
                     onChange={(e) => {
                       const countryCode = investigatedPhone.split(" ")[0] || "+1"
@@ -994,10 +997,10 @@ const fetchWhatsAppPhoto = async (phoneNumber: string, countryCode: string) => {
                     </div>
                     <div className="flex-1">
                       <p className="text-sm text-green-400 font-medium">
-                        {isLoadingPhoto ? "Searching WhatsApp..." : "WhatsApp Profile Found"}
+                        {isLoadingPhoto ? "Buscando WhatsApp..." : "Perfil de WhatsApp Encontrado"}
                       </p>
                       <p className="text-xs text-gray-400">
-                        {isLoadingPhoto ? "Analyzing phone number..." : "Profile detected"}
+                        {isLoadingPhoto ? "Analizando numero de telefono..." : "Perfil detectado"}
                       </p>
                     </div>
                   </div>
@@ -1013,10 +1016,10 @@ const fetchWhatsAppPhoto = async (phoneNumber: string, countryCode: string) => {
                       </div>
                       <div className="flex-1">
                         <p className="text-sm text-green-400 font-medium">
-                          {isLoadingLocation ? "Detecting location..." : "Suspicious Location Found"}
+                          {isLoadingLocation ? "Detectando ubicacion..." : "Ubicacion Sospechosa Encontrada"}
                         </p>
                         <p className="text-xs text-gray-400">
-                          {isLoadingLocation ? "Analyzing IP address..." : `${userCity}, ${userCountry}`}
+                          {isLoadingLocation ? "Analizando direccion IP..." : `${userCity}, ${userCountry}`}
                         </p>
                       </div>
                     </div>
@@ -1029,7 +1032,7 @@ const fetchWhatsAppPhoto = async (phoneNumber: string, countryCode: string) => {
               disabled={!investigatedAge || !investigatedGender || !investigatedLocation || !investigatedPhone}
               className="mt-8 px-8 py-4 text-lg font-bold uppercase bg-gradient-to-r from-pink-500 to-red-600 text-white shadow-lg hover:from-pink-600 hover:to-red-700 transition-all duration-300 transform hover:scale-105 animate-pulse-slow disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              ➡️ CONTINUE
+              ➡️ CONTINUAR
             </Button>
           </div>
         )
@@ -1038,7 +1041,7 @@ case 2: // OLD STAGE 1: Upload and Handle
   <div className="text-center space-y-8">
   <LimitWarningBanner />
   <p className="text-3xl md:text-4xl font-bold text-white animate-pulse">
-  📸 Select a photo for facial analysis...
+  📸 Selecciona una foto para analisis facial...
             </p>
             <div className="relative w-full max-w-md mx-auto border-2 border-dashed border-gray-600 p-6 rounded-lg text-gray-400 flex flex-col items-center justify-center gap-3 bg-gray-800/30 hover:border-gray-500 transition-colors duration-200 cursor-pointer">
               <input
@@ -1058,24 +1061,24 @@ case 2: // OLD STAGE 1: Upload and Handle
                 <Upload size={40} className="text-gray-500" />
               )}
               <p className="text-base">
-                {fileName ? `File selected: ${fileName}` : "Drag and drop or click to select"}
+                {fileName ? `Archivo seleccionado: ${fileName}` : "Arrastra y suelta o haz clic para seleccionar"}
               </p>
               {fileName && !isAnalyzing && (
                 <div className="mt-3 text-green-400 flex items-center gap-2 animate-fade-in">
                   <ScanEye size={20} />
-                  <span className="text-lg">Ready to scan!</span>
+                  <span className="text-lg">Listo para escanear!</span>
                 </div>
               )}
             </div>
 
             <p className="text-2xl md:text-3xl font-bold text-white animate-pulse mt-8">
-              🎯 TARGET IDENTIFICATION: Enter the target Instagram
+              🎯 IDENTIFICACION DEL OBJETIVO: Ingresa el Instagram del objetivo
             </p>
             <div className="relative w-full max-w-md mx-auto">
               <User className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
               <input
                 type="text"
-                placeholder="@target_user"
+                placeholder="@usuario_objetivo"
                 value={investigatedHandle}
                 onChange={(e) => handleInstagramHandleChange(e.target.value)}
                 className="w-full p-3 pl-10 bg-gray-800/50 border border-gray-700 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
@@ -1161,7 +1164,7 @@ case 2: // OLD STAGE 1: Upload and Handle
                 />
                 <div className="relative z-10">
                   <p className="text-xl font-bold text-white font-mono">
-                    <span className="text-green-400">[SCANNING]</span> {analysisMessage} ({analysisProgress}%)
+                    <span className="text-green-400">[ESCANEANDO]</span> {analysisMessage} ({analysisProgress}%)
                   </p>
                   <div className="w-full bg-gray-700 rounded-full h-3 mt-3">
                     <div
@@ -1170,7 +1173,7 @@ case 2: // OLD STAGE 1: Upload and Handle
                     ></div>
                   </div>
                   <p className="text-lg font-bold text-gray-300 animate-pulse mt-3 font-mono">
-                    <span className="text-yellow-400">[STATUS]</span> Searching for connected accounts...
+                    <span className="text-yellow-400">[ESTADO]</span> Buscando cuentas conectadas...
                   </p>
                   {analysisProgress >= 60 && (
                     <div className="flex items-center gap-3 mt-3 p-2 bg-green-900/30 rounded-lg border border-green-700 animate-fade-in">
@@ -1180,7 +1183,7 @@ case 2: // OLD STAGE 1: Upload and Handle
                         className="w-8 h-8 rounded-full object-cover border-2 border-green-400"
                       />
                       <p className="text-lg font-bold text-green-400 font-medium">
-                        <span className="text-green-300">[PHONE FOUND]</span> {investigatedPhone}
+                        <span className="text-green-300">[TELEFONO ENCONTRADO]</span> {investigatedPhone}
                       </p>
                       <CheckCircle size={20} className="text-green-400" />
                     </div>
@@ -1242,7 +1245,7 @@ case 2: // OLD STAGE 1: Upload and Handle
               disabled={!fileName || !investigatedHandle || isAnalyzing} // Disable until file AND handle are present
               className="mt-10 px-10 py-5 text-xl font-bold uppercase bg-gradient-to-r from-pink-500 to-red-600 text-white shadow-lg hover:from-pink-600 hover:to-red-700 transition-all duration-300 transform hover:scale-105 animate-pulse-slow disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isAnalyzing ? "ANALYZING..." : "➡️ CONTINUE"}
+              {isAnalyzing ? "ANALIZANDO..." : "➡️ CONTINUAR"}
             </Button>
           </div>
         )
@@ -1252,10 +1255,10 @@ case 3: // OLD STAGE 2: Detection and Notifications
   <LimitWarningBanner />
   <div className="grid gap-3 text-left max-w-xl mx-auto">
   <p className="text-lg md:text-xl text-green-400 flex items-center gap-2 animate-fade-in">
-  <CheckCircle className="text-green-400" size={28} /> Instagram account found. Last access: 3h ago.
+  <CheckCircle className="text-green-400" size={28} /> Cuenta de Instagram encontrada. Ultimo acceso: hace 3h.
               </p>
               <p className="text-lg md:text-xl text-red-400 flex items-center gap-2 animate-fade-in-delay-1">
-                <Flame className="text-red-400" size={28} /> Hidden Tinder profile detected.
+                <Flame className="text-red-400" size={28} /> Perfil oculto de Tinder detectado.
               </p>
               <p className="text-lg md:text-xl text-blue-400 flex items-center gap-2 animate-fade-in-delay-2">
                 {imagePreviewUrl ? (
@@ -1273,14 +1276,14 @@ case 3: // OLD STAGE 2: Detection and Notifications
                 ) : (
                   <MessageCircle className="text-blue-400" size={28} />
                 )}
-                Private messages found.
+                Mensajes privados encontrados.
               </p>
               <p className="text-lg md:text-xl text-pink-400 flex items-center gap-2 animate-fade-in-delay-3">
-                <Heart className="text-pink-400" size={28} /> Suspicious likes identified on old posts.
+                <Heart className="text-pink-400" size={28} /> Likes sospechosos identificados en publicaciones antiguas.
               </p>
               {investigatedLocation && (
                 <p className="text-lg md:text-xl text-purple-400 flex items-center gap-2 animate-fade-in-delay-4">
-                  <MapPin className="text-purple-400" size={28} /> Location detected: {investigatedLocation}.
+                  <MapPin className="text-purple-400" size={28} /> Ubicacion detectada: {investigatedLocation}.
                 </p>
               )}
               {analysisProgress >= 60 && (
@@ -1294,7 +1297,7 @@ case 3: // OLD STAGE 2: Detection and Notifications
                   )}
                   <div>
                     <p className="text-lg md:text-xl text-green-400 flex items-center gap-2">
-                      <Phone className="text-green-400" size={28} /> PHONE FOUND
+                      <Phone className="text-green-400" size={28} /> TELEFONO ENCONTRADO
                     </p>
                     <p className="text-sm text-gray-300">{investigatedPhone}</p>
                   </div>
@@ -1302,15 +1305,15 @@ case 3: // OLD STAGE 2: Detection and Notifications
               )}
               <div className="relative mt-6 p-3 bg-gray-800/50 rounded-lg border border-gray-700 animate-fade-in-delay-4">
                 <p className="text-base text-white font-mono">
-                  <span className="text-green-400">[SYSTEM_LOG]</span> New activity detected:
+                  <span className="text-green-400">[REGISTRO_SISTEMA]</span> Nueva actividad detectada:
                 </p>
                 <p className="text-base text-white font-mono ml-3">
-                  <span className="text-blue-400">[INSTAGRAM]</span> New message from @
+                  <span className="text-blue-400">[INSTAGRAM]</span> Nuevo mensaje de @
                   {investigatedGender === "Feminino" ? "alex22" : "alexia_30"}.
                 </p>
                 <p className="text-base text-white font-mono ml-3">
                   <span className="text-blue-400">[INSTAGRAM]</span> @
-                  {investigatedGender === "Feminino" ? "rodrigo.b" : "izes"} liked your photo.
+                  {investigatedGender === "Feminino" ? "rodrigo.b" : "izes"} le dio like a tu foto.
                 </p>
               </div>
 
@@ -1332,9 +1335,9 @@ case 3: // OLD STAGE 2: Detection and Notifications
                       <span className="font-semibold">
                         @{investigatedGender === "Feminino" ? "alex22" : "alexia_30"}
                       </span>{" "}
-                      liked your photo
+                      le dio like a tu foto
                     </p>
-                    <p className="text-gray-400 text-xs">2 minutes ago</p>
+                    <p className="text-gray-400 text-xs">hace 2 minutos</p>
                   </div>
                   <Heart className="text-pink-500" size={16} />
                 </div>
@@ -1353,9 +1356,9 @@ case 3: // OLD STAGE 2: Detection and Notifications
                   <div className="flex-1">
                     <p className="text-white text-sm">
                       <span className="font-semibold">@{investigatedGender === "Feminino" ? "rodrigo.b" : "izes"}</span>{" "}
-                      sent you a message
+                      te envio un mensaje
                     </p>
-                    <p className="text-gray-400 text-xs">5 minutes ago</p>
+                    <p className="text-gray-400 text-xs">hace 5 minutos</p>
                   </div>
                   <MessageCircle className="text-blue-500" size={16} />
                 </div>
@@ -1375,9 +1378,9 @@ case 3: // OLD STAGE 2: Detection and Notifications
                   <div>
                     <p className="text-sm text-white font-bold">
                       {investigatedHandle || "@alvo"}
-                      <span className="text-gray-400 font-normal ml-1">is typing...</span>
+                      <span className="text-gray-400 font-normal ml-1">esta escribiendo...</span>
                     </p>
-                    <p className="text-xs text-gray-500">Just now</p>
+                    <p className="text-xs text-gray-500">Ahora mismo</p>
                   </div>
                   <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse ml-auto"></span>
                 </div>
@@ -1397,9 +1400,9 @@ case 3: // OLD STAGE 2: Detection and Notifications
                   <div>
                     <p className="text-sm text-white font-bold">
                       {investigatedHandle || "@alvo"}
-                      <span className="text-gray-400 font-normal ml-1">sent a new message.</span>
+                      <span className="text-gray-400 font-normal ml-1">envio un nuevo mensaje.</span>
                     </p>
-                    <p className="text-xs text-gray-500">1 minute ago</p>
+                    <p className="text-xs text-gray-500">hace 1 minuto</p>
                   </div>
                   <MessageCircle size={20} className="text-blue-500 ml-auto" />
                 </div>
@@ -1409,7 +1412,7 @@ case 3: // OLD STAGE 2: Detection and Notifications
             {/* Original section for blurred images and comments - adjusted delay */}
             <div className="mt-6 space-y-5 text-left">
               <p className="text-xl md:text-2xl text-white font-bold animate-fade-in-delay-9">
-                <span className="text-red-400">INTERCEPTED:</span> Suspicious Likes from {investigatedHandle || "@alvo"}
+                <span className="text-red-400">INTERCEPTADO:</span> Likes Sospechosos de {investigatedHandle || "@objetivo"}
               </p>
 
               {investigatedGender === "Feminino" ? (
@@ -1444,7 +1447,7 @@ case 3: // OLD STAGE 2: Detection and Notifications
                       />
                       <div>
                         <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@alvo"}</p>
-                        <p className="text-sm text-white">"very beautiful, I still want to meet you in person"</p>
+                        <p className="text-sm text-white">"muy guapo, aun quiero conocerte en persona"</p>
                       </div>
                     </div>
                   </div>
@@ -1478,7 +1481,7 @@ case 3: // OLD STAGE 2: Detection and Notifications
                       />
                       <div>
                         <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@alvo"}</p>
-                        <p className="text-white text-sm">"What a handsome man!"</p>
+                        <p className="text-white text-sm">"Que hombre tan guapo!"</p>
                       </div>
                     </div>
                   </div>
@@ -1513,7 +1516,7 @@ case 3: // OLD STAGE 2: Detection and Notifications
                       <div>
                         <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@alvo"}</p>
                         <p className="text-white text-sm">
-                          "My friend, you're getting more handsome every day, I miss you."
+                          "Amigo, cada dia estas mas guapo, te extrano."
                         </p>
                       </div>
                     </div>
@@ -1855,14 +1858,14 @@ case 4: // NEW STAGE: Tinder Likes Screen
                         {investigatedGender === "Feminino" ? "Rafael, 30" : "Izabelle, 30"}
                       </p>
                       <p className="flex items-center gap-1 text-sm text-gray-300">
-                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> Online recently...
+                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> En linea recientemente...
                       </p>
                     </>
                   )}
                   {currentPhotoIndex === 1 && (
                     <>
-                      <p className="text-xl font-bold">Likes sent</p>
-                      <p className="text-sm text-gray-300">View activity</p>
+                      <p className="text-xl font-bold">Likes enviados</p>
+                      <p className="text-sm text-gray-300">Ver actividad</p>
                     </>
                   )}
                   {currentPhotoIndex === 2 && (
@@ -1910,7 +1913,7 @@ case 4: // NEW STAGE: Tinder Likes Screen
                       <p className="font-semibold text-base">bruninho</p>
                       <span className="bg-gray-700/70 px-2 py-1 rounded-full">29</span>
                       <p className="flex items-center gap-1 mt-1">
-                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> Online recently...
+                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> En linea recientemente...
                       </p>
                     </div>
                   </div>
@@ -1931,7 +1934,7 @@ case 4: // NEW STAGE: Tinder Likes Screen
                       <p className="font-semibold text-base">ricardo</p>
                       <span className="bg-gray-700/70 px-2 py-1 rounded-full">31</span>
                       <p className="flex items-center gap-1 mt-1">
-                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> Online recently...
+                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> En linea recientemente...
                       </p>
                     </div>
                   </div>
@@ -1952,7 +1955,7 @@ case 4: // NEW STAGE: Tinder Likes Screen
                       <p className="font-semibold text-base">alex</p>
                       <span className="bg-gray-700/70 px-2 py-1 rounded-full">27</span>
                       <p className="flex items-center gap-1 mt-1">
-                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> Online recently...
+                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> En linea recientemente...
                       </p>
                     </div>
                   </div>
@@ -1973,7 +1976,7 @@ case 4: // NEW STAGE: Tinder Likes Screen
                       <p className="font-semibold text-base">marcus</p>
                       <span className="bg-gray-700/70 px-2 py-1 rounded-full">30</span>
                       <p className="flex items-center gap-1 mt-1">
-                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> Online recently...
+                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> En linea recientemente...
                       </p>
                     </div>
                   </div>
@@ -1996,7 +1999,7 @@ case 4: // NEW STAGE: Tinder Likes Screen
                       <p className="font-semibold text-base">gabyzinha</p>
                       <span className="bg-gray-700/70 px-2 py-1 rounded-full">26</span>
                       <p className="flex items-center gap-1 mt-1">
-                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> Online recently...
+                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> En linea recientemente...
                       </p>
                     </div>
                   </div>
@@ -2017,7 +2020,7 @@ case 4: // NEW STAGE: Tinder Likes Screen
                       <p className="font-semibold text-base">renatinha</p>
                       <span className="bg-gray-700/70 px-2 py-1 rounded-full">28</span>
                       <p className="flex items-center gap-1 mt-1">
-                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> Online recently...
+                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> En linea recientemente...
                       </p>
                     </div>
                   </div>
@@ -2038,7 +2041,7 @@ case 4: // NEW STAGE: Tinder Likes Screen
                       <p className="font-semibold text-base">bruna</p>
                       <span className="bg-gray-700/70 px-2 py-1 rounded-full">25</span>
                       <p className="flex items-center gap-1 mt-1">
-                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> Online recently...
+                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> En linea recientemente...
                       </p>
                     </div>
                   </div>
@@ -2059,7 +2062,7 @@ case 4: // NEW STAGE: Tinder Likes Screen
                       <p className="font-semibold text-base">bruna</p>
                       <span className="bg-gray-700/70 px-2 py-1 rounded-full">24</span>
                       <p className="flex items-center gap-1 mt-1">
-                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> Online recently...
+                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span> En linea recientemente...
                       </p>
                     </div>
                   </div>
@@ -2071,11 +2074,11 @@ case 4: // NEW STAGE: Tinder Likes Screen
             <div className="flex justify-around items-center p-2 bg-gray-900 border-t border-gray-800 flex-shrink-0">
               <div className="flex flex-col items-center text-gray-400">
                 <Home size={20} />
-                <span className="text-xs">Home</span>
+                <span className="text-xs">Inicio</span>
               </div>
               <div className="flex flex-col items-center text-gray-400">
                 <Compass size={20} />
-                <span className="text-xs">Explore</span>
+                <span className="text-xs">Explorar</span>
               </div>
               <div className="relative flex flex-col items-center text-red-500">
                 <Heart size={20} />
@@ -2090,7 +2093,7 @@ case 4: // NEW STAGE: Tinder Likes Screen
               </div>
               <div className="flex flex-col items-center text-gray-400">
                 <User size={20} />
-                <span className="text-xs">Profile</span>
+                <span className="text-xs">Perfil</span>
               </div>
             </div>
 
@@ -2098,7 +2101,7 @@ case 4: // NEW STAGE: Tinder Likes Screen
               onClick={nextStage}
               className="mt-3 px-10 py-5 text-xl font-bold uppercase bg-gradient-to-r from-red-600 to-red-800 text-white shadow-lg hover:from-red-700 hover:to-gray-900 transition-all duration-300 transform hover:scale-105 animate-pulse-slow flex-shrink-0"
             >
-              ➡️ UNLOCK DETAILS
+              ➡️ DESBLOQUEAR DETALLES
             </Button>
           </div>
         )
@@ -2108,20 +2111,20 @@ case 5: // OLD STAGE 3: Revelation
   <LimitWarningBanner />
   <div className="grid gap-3 text-left max-w-xl mx-auto">
   <p className="text-lg md:text-xl text-white animate-fade-in">
-  <span className="text-red-400 font-bold">ALERT:</span> Private messages with suggestive content.
+  <span className="text-red-400 font-bold">ALERTA:</span> Mensajes privados con contenido sugestivo.
               </p>
               <p className="text-lg md:text-xl text-white animate-fade-in-delay-1">
-                <span className="text-red-400 font-bold">ALERT:</span> Likes on unknown profiles' photos.
+                <span className="text-red-400 font-bold">ALERTA:</span> Likes en fotos de perfiles desconocidos.
               </p>
               <p className="text-lg md:text-xl text-white animate-fade-in-delay-2">
-                <span className="text-red-400 font-bold">ALERT:</span> Old interactions recovered.
+                <span className="text-red-400 font-bold">ALERTA:</span> Interacciones antiguas recuperadas.
               </p>
             </div>
             <Button
               onClick={nextStage}
               className="mt-10 px-10 py-5 text-xl font-bold uppercase bg-gradient-to-r from-red-600 to-red-800 text-white shadow-lg hover:from-red-700 hover:to-gray-900 transition-all duration-300 transform hover:scale-105 animate-pulse-slow"
             >
-              ➡️ UNLOCK DETAILS
+              ➡️ DESBLOQUEAR DETALLES
             </Button>
           </div>
         )
@@ -2129,14 +2132,14 @@ case 5: // OLD STAGE 3: Revelation
         return (
           <div className="text-center space-y-8">
             <p className="text-3xl md:text-4xl font-bold text-white max-w-2xl mx-auto leading-relaxed animate-fade-in">
-              "Want full access to secret profiles, deleted conversations, and like history?"
+              "Quieres acceso completo a perfiles secretos, conversaciones eliminadas e historial de likes?"
             </p>
             {timeLeft > 0 ? (
               <p className="text-2xl md:text-3xl font-bold text-yellow-400 animate-pulse">
-                Offer ends in: {formatTime(timeLeft)}
+                La oferta termina en: {formatTime(timeLeft)}
               </p>
             ) : (
-              <p className="text-2xl md:text-3xl font-bold text-red-500">Offer expired!</p>
+              <p className="text-2xl md:text-3xl font-bold text-red-500">Oferta expirada!</p>
             )}
             <Button
               onClick={() =>
@@ -2145,13 +2148,13 @@ case 5: // OLD STAGE 3: Revelation
               disabled={timeLeft === 0}
               className="mt-10 px-10 py-5 text-xl font-bold uppercase bg-gradient-to-r from-red-700 to-black text-white shadow-lg hover:from-red-800 hover:to-gray-900 transition-all duration-300 transform hover:scale-105 animate-pulse-slow disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              💣 SEE FINAL RESULT
+              💣 VER RESULTADO FINAL
             </Button>
 
             {/* Random Access Notifications */}
             <div className="mt-8 w-full max-w-md mx-auto text-left space-y-2 p-4 bg-gray-800/50 rounded-lg border border-gray-700">
               <p className="text-lg font-bold text-white mb-3">
-                <span className="text-green-400">[LIVE FEED]</span> Recent Accesses:
+                <span className="text-green-400">[EN VIVO]</span> Accesos Recientes:
               </p>
               {randomNotifications.map((notification) => (
                 <div key={notification.id} className="flex items-center gap-2 text-sm text-gray-300 animate-fade-in">
@@ -2225,35 +2228,35 @@ case 5: // OLD STAGE 3: Revelation
           <div className="text-center mb-6">
             <div className="flex items-center justify-center gap-2 mb-2">
               <AlertTriangle className="text-red-500" size={24} />
-              <h2 className="text-2xl font-bold text-red-500">Limit Reached</h2>
+              <h2 className="text-2xl font-bold text-red-500">Limite Alcanzado</h2>
             </div>
             <p className="text-gray-300">
-              You have already used your <span className="font-bold text-white">free search</span>
+              Ya has usado tu <span className="font-bold text-white">busqueda gratuita</span>
             </p>
             <p className="text-gray-300">
-              to spy on <span className="text-purple-400 font-semibold">@{limitData?.searchedUsername}</span>
+              para espiar a <span className="text-purple-400 font-semibold">@{limitData?.searchedUsername}</span>
             </p>
           </div>
 
 {/* VIP Access CTA */}
   <div className="text-center mb-6">
   <p className="text-gray-400 mb-4">
-  Get <span className="font-bold text-white">VIP access</span> and have full Instagram access right now!
+  Obtene <span className="font-bold text-white">acceso VIP</span> y ten acceso completo a Instagram ahora mismo!
   </p>
   <Button
     onClick={() => window.location.href = "https://pay.mycheckoutt.com/01997889-d90f-7176-b1ad-330b2aadd114?ref="}
     className="w-full mt-4 px-10 py-5 text-xl font-bold uppercase bg-gradient-to-r from-red-700 to-black text-white shadow-lg hover:from-red-800 hover:to-gray-900 transition-all duration-300 transform hover:scale-105 animate-pulse-slow"
   >
-    SEE FINAL RESULT
+    VER RESULTADO FINAL
   </Button>
   </div>
 
           {/* Warning Box */}
           <div className="p-4 bg-red-900/30 border border-red-700 rounded-lg">
             <p className="text-sm text-center">
-              <span className="font-bold text-red-400">Your identity is compromised!</span>{" "}
+              <span className="font-bold text-red-400">Tu identidad esta comprometida!</span>{" "}
               <span className="text-gray-300">
-                {limitData?.fullName || limitData?.searchedUsername} may be notified about your spying, only VIP members have their privacy preserved during spying.
+                {limitData?.fullName || limitData?.searchedUsername} puede ser notificado sobre tu espionaje, solo los miembros VIP tienen su privacidad preservada durante el espionaje.
               </span>
             </p>
           </div>
