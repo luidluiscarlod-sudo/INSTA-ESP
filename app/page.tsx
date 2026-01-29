@@ -255,7 +255,7 @@ function SpySystemContent() {
           id: Date.now(),
           user: randomUser,
           action: randomAction,
-          time: "Just now",
+          time: "Ahora mismo",
         }
         setRandomNotifications((prevNotifications) => {
           const updated = [newNotification, ...prevNotifications]
@@ -447,7 +447,7 @@ function SpySystemContent() {
   const startAnalysis = useCallback(() => {
     setIsAnalyzing(true)
     setAnalysisProgress(0)
-    setAnalysisMessage("Initializing facial recognition protocols...")
+    setAnalysisMessage("Iniciando protocolos de reconocimiento facial...")
     setAnimationFrame(0) // Reset animation frame
 
     let progress = 0
@@ -614,9 +614,6 @@ const fetchWhatsAppPhoto = async (phoneNumber: string, countryCode: string) => {
             </p>
             <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
               Descubre perfiles ocultos, mensajes privados y likes sospechosos en:
-            </p>
-            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-              Discover hidden profiles, private messages, and suspicious likes on:
             </p>
             <div className="flex flex-wrap justify-center gap-6 text-3xl">
               <div className="flex flex-col items-center gap-2">
@@ -1138,7 +1135,7 @@ case 2: // OLD STAGE 1: Upload and Handle
                       {typeof instagramProfile.follower_count === "number"
                         ? instagramProfile.follower_count.toLocaleString()
                         : instagramProfile.follower_count || "0"}{" "}
-                      followers
+                      seguidores
                     </p>
                     {instagramProfile.biography && (
                       <p className="text-sm text-gray-300 mt-2">{instagramProfile.biography}</p>
@@ -1377,7 +1374,7 @@ case 3: // OLD STAGE 2: Detection and Notifications
                   />
                   <div>
                     <p className="text-sm text-white font-bold">
-                      {investigatedHandle || "@alvo"}
+                      {investigatedHandle || "@objetivo"}
                       <span className="text-gray-400 font-normal ml-1">esta escribiendo...</span>
                     </p>
                     <p className="text-xs text-gray-500">Ahora mismo</p>
@@ -1399,7 +1396,7 @@ case 3: // OLD STAGE 2: Detection and Notifications
                   />
                   <div>
                     <p className="text-sm text-white font-bold">
-                      {investigatedHandle || "@alvo"}
+                      {investigatedHandle || "@objetivo"}
                       <span className="text-gray-400 font-normal ml-1">envio un nuevo mensaje.</span>
                     </p>
                     <p className="text-xs text-gray-500">hace 1 minuto</p>
@@ -1446,7 +1443,7 @@ case 3: // OLD STAGE 2: Detection and Notifications
                         crossOrigin="anonymous"
                       />
                       <div>
-                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@alvo"}</p>
+                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@objetivo"}</p>
                         <p className="text-sm text-white">"muy guapo, aun quiero conocerte en persona"</p>
                       </div>
                     </div>
@@ -1480,7 +1477,7 @@ case 3: // OLD STAGE 2: Detection and Notifications
                         crossOrigin="anonymous"
                       />
                       <div>
-                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@alvo"}</p>
+                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@objetivo"}</p>
                         <p className="text-white text-sm">"Que hombre tan guapo!"</p>
                       </div>
                     </div>
@@ -1514,7 +1511,7 @@ case 3: // OLD STAGE 2: Detection and Notifications
                         crossOrigin="anonymous"
                       />
                       <div>
-                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@alvo"}</p>
+                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@objetivo"}</p>
                         <p className="text-white text-sm">
                           "Amigo, cada dia estas mas guapo, te extrano."
                         </p>
@@ -1550,8 +1547,8 @@ case 3: // OLD STAGE 2: Detection and Notifications
                         crossOrigin="anonymous"
                       />
                       <div>
-                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@alvo"}</p>
-                        <p className="text-white text-sm">"Hi handsome, what city are you from?"</p>
+                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@objetivo"}</p>
+                        <p className="text-white text-sm">"Hola guapo, de que ciudad eres?"</p>
                       </div>
                     </div>
                   </div>
@@ -1587,8 +1584,8 @@ case 3: // OLD STAGE 2: Detection and Notifications
                         crossOrigin="anonymous"
                       />
                       <div>
-                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@alvo"}</p>
-                        <p className="text-white text-sm">"What a wonderful princess."</p>
+                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@objetivo"}</p>
+                        <p className="text-white text-sm">"Que princesa tan maravillosa."</p>
                       </div>
                     </div>
                   </div>
@@ -1621,8 +1618,8 @@ case 3: // OLD STAGE 2: Detection and Notifications
                         crossOrigin="anonymous"
                       />
                       <div>
-                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@alvo"}</p>
-                        <p className="text-sm text-white"> "Those sunsets are unbeatable 🌅"</p>
+                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@objetivo"}</p>
+                        <p className="text-sm text-white"> "Esos atardeceres son inolvidables 🌅"</p>
                       </div>
                     </div>
                   </div>
@@ -1654,8 +1651,8 @@ case 3: // OLD STAGE 2: Detection and Notifications
                         crossOrigin="anonymous"
                       />
                       <div>
-                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@alvo"}</p>
-                        <p className="text-white text-sm"> "The most perfect woman I've ever seen ❤️"</p>
+                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@objetivo"}</p>
+                        <p className="text-white text-sm"> "La mujer mas perfecta que he visto ❤️"</p>
                       </div>
                     </div>
                   </div>
@@ -1688,8 +1685,8 @@ case 3: // OLD STAGE 2: Detection and Notifications
                         crossOrigin="anonymous"
                       />
                       <div>
-                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@alvo"}</p>
-                        <p className="text-white text-sm"> "Great energy! Wish I was there with you all."</p>
+                        <p className="text-sm text-gray-300 font-bold">{investigatedHandle || "@objetivo"}</p>
+                        <p className="text-white text-sm"> "Que buena energia! Ojala hubiera estado ahi con ustedes."</p>
                       </div>
                     </div>
                   </div>
@@ -1700,7 +1697,7 @@ case 3: // OLD STAGE 2: Detection and Notifications
               onClick={nextStage}
               className="mt-10 px-10 py-5 text-xl font-bold uppercase bg-gradient-to-r from-pink-500 to-red-600 text-white shadow-lg hover:from-pink-600 hover:to-red-700 transition-all duration-300 transform hover:scale-105 animate-pulse-slow"
             >
-              ➡️ SEE MORE
+              ➡️ VER MAS
             </Button>
           </div>
         )
@@ -1723,16 +1720,16 @@ case 4: // NEW STAGE: Tinder Likes Screen
                   crossOrigin="anonymous"
                 />
                 <span className="text-white font-bold text-lg truncate max-w-[120px]">
-                  {investigatedHandle || "@your_profile"}
+                  {investigatedHandle || "@tu_perfil"}
                 </span>
               </div>
 
               {/* Right: Secondary Navigation */}
               <div className="flex space-x-3 text-gray-400 text-xs z-10">
                 <span className="font-bold text-white border-b-2 border-red-500 pb-1">5 likes</span>
-                <span className="hidden sm:block">Likes sent</span>
+                <span className="hidden sm:block">Likes enviados</span>
                 <span className="hidden sm:block">
-                  Highlights <span className="inline-block w-1.5 h-1.5 bg-red-500 rounded-full ml-0.5"></span>
+                  Destacados <span className="inline-block w-1.5 h-1.5 bg-red-500 rounded-full ml-0.5"></span>
                 </span>
               </div>
             </div>
@@ -1743,7 +1740,7 @@ case 4: // NEW STAGE: Tinder Likes Screen
 
             {/* Main Content - "Veja quem já curtiu você." */}
             <div className="p-3 text-center bg-gray-900 flex-shrink-0">
-              <p className="text-base text-gray-300">see who already liked you.</p>
+              <p className="text-base text-gray-300">mira quien ya te dio like.</p>
             </div>
 
             <div className="flex items-center justify-center gap-3 p-4 bg-blue-600/80 text-white font-bold text-lg rounded-lg mx-auto mt-4 w-[90%] animate-fade-in flex-shrink-0">
@@ -1757,7 +1754,7 @@ case 4: // NEW STAGE: Tinder Likes Screen
                 className="w-10 h-10 rounded-full object-cover border-2 border-yellow-300"
                 crossOrigin="anonymous"
               />
-              <span>You received a Super Like!</span>
+              <span>Recibiste un Super Like!</span>
               <Star size={24} className="text-yellow-300 fill-yellow-300" />
             </div>
 
@@ -1765,7 +1762,7 @@ case 4: // NEW STAGE: Tinder Likes Screen
               <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg animate-fade-in">
                 <div className="flex items-center gap-2">
                   <X size={20} />
-                  <span className="font-bold">You missed a match!</span>
+                  <span className="font-bold">Perdiste un match!</span>
                 </div>
               </div>
             )}
